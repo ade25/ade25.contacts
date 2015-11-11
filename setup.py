@@ -13,7 +13,7 @@ def read(*rnames):
 long_description = read('README.rst')
 
 setup(
-    name='ade25.contact',
+    name='ade25.contacts',
     version='1.0.0',
     description="Manager for organisation contacts",
     long_description=long_description,
