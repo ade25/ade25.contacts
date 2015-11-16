@@ -19,9 +19,9 @@
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
         name="default"
-        title="ade25.contact"
+        title="ade25.contacts"
         directory="profiles/default"
-        description="Extension profile for ade25.contact."
+        description="Extension profile for ade25.contacts"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 

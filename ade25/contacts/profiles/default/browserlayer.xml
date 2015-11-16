@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <layers>
   <layer
-    name="ade25.contact"
-    interface="ade25.contact.interfaces.IAde25ContactLayer"
+    name="ade25.contacts"
+    interface="ade25.contacts.interfaces.IAde25ContactLayer"
   />
 </layers>

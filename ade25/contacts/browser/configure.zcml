@@ -10,7 +10,7 @@
       class=".contact.ContactView"
       template="contact.pt"
       permission="zope2.View"
-      layer="..interfaces.IAde25ContactLayer"
+      layer="ade25.contacts.interfaces.IAde25ContactLayer"
       />
 
 </configure>

@@ -35,10 +35,8 @@ class Contact(Container):
 
     @property
     def title(self):
-        first_name = getattr(self, 'first_name', None)
-        last_name = getattr(self, 'last_name', None)
-        if first_name and last_name:
-            return '{0} {1}'.format(first_name, last_name)
+        if hasattr(self, 'first_name') and hasattr(self, 'last_name'):
+            return '{0} {1}'.format(self.first_name, self.last_name)
         else:
             return ''
 
@@ -52,13 +50,15 @@ class ITitleFromContactName(INameFromTitle):
         """Return a processed title"""
 
 
-@implementer(ITitleFromContactName)
 class TitleFromContactName(object):
+    implements(ITitleFromContactName)
 
     def __init__(self, context):
         self.context = context
 
     @property
     def title(self):
-        context = aq_inner(self.context)
-        return '{0} {1}'.format(context.first_name, context.last_name)
+        return '{0} {1}'.format(self.context.first_name, self.context.last_name)
+
+    def setTitle(self, value):
+        return
