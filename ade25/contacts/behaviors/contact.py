@@ -8,7 +8,7 @@ from zope.interface import implementer
 from zope.interface import provider
 from zope import schema
 
-from aha.sitecontent import _
+from ade25.contacts import _
 
 
 @provider(IFormFieldProvider)

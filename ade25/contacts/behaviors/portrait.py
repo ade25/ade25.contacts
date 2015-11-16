@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from plone.app.contenttypes import _
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.namedfile import field as namedfile
@@ -8,6 +7,8 @@ from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import provider
+
+from ade25.contacts import _
 
 
 @provider(IFormFieldProvider)

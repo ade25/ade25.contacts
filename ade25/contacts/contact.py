@@ -7,9 +7,10 @@ from plone.dexterity.content import Container
 from plone.directives import form
 from plone.namedfile.interfaces import IImageScaleTraversable
 from zope.interface import implementer
+from zope.interface import implements
 from zope import schema
 
-from ade25.sitecontent import MessageFactory as _
+from ade25.contacts import _
 
 
 class IContact(form.Schema, IImageScaleTraversable):
@@ -28,7 +29,7 @@ class IContact(form.Schema, IImageScaleTraversable):
     )
 
 
-@implementer(IContentPage)
+@implementer(IContact)
 class Contact(Container):
     """ Content class """
 
@@ -51,8 +52,8 @@ class ITitleFromContactName(INameFromTitle):
         """Return a processed title"""
 
 
+@implementer(ITitleFromContactName)
 class TitleFromContactName(object):
-    implements(ITitleFromContactName)
 
     def __init__(self, context):
         self.context = context
