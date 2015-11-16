@@ -16,14 +16,12 @@
             ${context/Title}
           </h1>
       </div>
-      <p class="app-page-abstract" tal:condition="context/Description">
-          ${context/Description}
-      </p>
     </div>
     <div class="app-page-body">
-      <div class="app-page-body-text" id="parent-fieldname-text"
-        tal:condition="context/text"
-        tal:content="structure context/text/output" />
+      <p>Contact information will be inserted here by either rendering the
+        prepared contact card snippet or by providing an extended dedicated
+        view
+      </p>
     </div>
 
   </metal:content-core>
