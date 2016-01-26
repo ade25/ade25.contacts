@@ -15,7 +15,6 @@ from ade25.contacts import _
 class IContactInformation(model.Schema):
     """Behavior providing contact information"""
 
-
     position = schema.TextLine(
         title=_(u"Position"),
         required=False
@@ -39,7 +38,7 @@ class IContactInformation(model.Schema):
     enquiry = schema.Bool(
         title=_(u"Check to enable direct enquiry"),
         description=_(u"When activated the contact card will link to an "
-                       "direct enquiry form"),
+                      u"direct enquiry form"),
         required=False,
     )
 

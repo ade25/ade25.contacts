@@ -30,10 +30,4 @@
         type="theme"
     />
 
-    <adapter
-        for="ade25.contacts.contact.IContact"
-        provides="ade25.contacts.contact.ITitleFromContactName"
-        factory="ade25.contacts.contact.TitleFromContactName"
-    />
-
 </configure>

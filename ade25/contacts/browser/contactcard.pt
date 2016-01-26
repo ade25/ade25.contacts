@@ -1,19 +1,44 @@
 <div class="app-card app-card-address">
   <div class="app-card-header">
-    &nbsp;
+    <tal:image tal:condition="view/has_image">
+        <figure class="app-page-image-container"
+            tal:define="item_uuid context/UID;
+                        image_data python:view.get_image_data(item_uuid)">
+            <div class="ratio-container unknown-ratio-container">
+              <img class="lazyload"
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-sizes="auto"
+                  data-src="${image_data/large}"
+                  data-srcset="${image_data/small},
+                               ${image_data/medium},
+                               ${image_data/large},
+                               ${image_data/original}" />
+            </div>
+            <noscript>
+              <!-- Provide fallback for missing lazyload javascript -->
+              <img tal:define="has_img item/image|nothing;
+                               scales item/@@images|nothing"
+                  tal:condition="python:has_img and scales"
+                  tal:replace="structure python: scales.scale('image', scale='mini').tag(css_class='newsImage')" />
+            </noscript>
+          <figcaption tal:condition="exists:item/image_caption">
+            ${item/image_caption}
+          </figcaption>
+        </figure>
+    </tal:image>
   </div>
   <div class="app-card-main">
     <div class="app-card-title">
       ${context/Title}
     </div>
     <div class="app-card-content">
-      <address>
-        Münchner Str. 9<br>
-        86551 Aichach
+      <address tal:condition="view/has_address_info">
+        ${context/address}<br>
+        ${context/zipcode} ${context/city}
       </address>
       <address>
-        Telefon: 08251/92-0<br>
-        E-Mail: <a href="poststelle@lra-aic-fdb.de">poststelle@lra-aic-fdb.de</a>
+        Telefon: ${context/phone}<br>
+        E-Mail: <a href="${context/email}">${context/email}</a>
       </address>
     </div>
   </div>

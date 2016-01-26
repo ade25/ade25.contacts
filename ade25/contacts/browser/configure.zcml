@@ -13,4 +13,14 @@
       layer="ade25.contacts.interfaces.IAde25ContactLayer"
       />
 
+  <browser:page
+      for="ade25.contacts.contact.IContact"
+      name="contact-card-view"
+      class=".contact.ContactCardView"
+      template="contactcard.pt"
+      permission="zope2.View"
+      layer="ade25.contacts.interfaces.IAde25ContactLayer"
+      />
+
+
 </configure>
