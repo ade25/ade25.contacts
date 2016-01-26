@@ -4,11 +4,20 @@ from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
 from zope.component import getUtility
 
-from ade25.contacts.interfaces import IResponsiveImagesTool
+from ade25.contacts.interfaces import IContactImagesTool
 
 
 class ContactView(BrowserView):
     """ Folderish contact item default view """
+
+    def get_image_data(self, uuid):
+        tool = getUtility(IContactImagesTool)
+        return tool.create(uuid)
+
+    def render_contact_card(self):
+        context = aq_inner(self.context)
+        template = context.restrictedTraverse('@@contact-card-view')()
+        return template
 
 
 class ContactCardView(BrowserView):
@@ -31,5 +40,5 @@ class ContactCardView(BrowserView):
         return False
 
     def get_image_data(self, uuid):
-        tool = getUtility(IResponsiveImagesTool)
+        tool = getUtility(IContactImagesTool)
         return tool.create(uuid)

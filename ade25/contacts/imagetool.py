@@ -10,7 +10,7 @@ from zope.globalrequest import getRequest
 IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
 
 
-class ResponsiveImagesTool(object):
+class ContactImagesTool(object):
     """ Factory providing rescaling of project images """
 
     def create(self, uuid):

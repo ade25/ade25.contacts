@@ -22,6 +22,8 @@
         prepared contact card snippet or by providing an extended dedicated
         view
       </p>
+      <hr>
+      <div tal:replace="structure view/render_contact_card" />
     </div>
 
   </metal:content-core>

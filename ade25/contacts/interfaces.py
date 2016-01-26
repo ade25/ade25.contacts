@@ -9,7 +9,7 @@ class IAde25ContactLayer(IDefaultPloneLayer):
     """Marker interface that defines a Zope 3 browser layer."""
 
 
-class IResponsiveImagesTool(Interface):
+class IContactImagesTool(Interface):
     """ Responsive image generator
 
         General tool providing srcset compatible image transforms

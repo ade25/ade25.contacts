@@ -30,4 +30,9 @@
         type="theme"
     />
 
+    <utility
+        provides="ade25.contacts.interfaces.IContactImagesTool"
+        factory="ade25.contacts.imagetool.ContactImagesTool"
+        />
+
 </configure>
