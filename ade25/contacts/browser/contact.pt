@@ -16,14 +16,55 @@
             ${context/Title}
           </h1>
       </div>
+      <p class="app-page-abstract" tal:condition="context/Description">
+            ${context/Description}
+      </p>
     </div>
     <div class="app-page-body">
-      <p>Contact information will be inserted here by either rendering the
-        prepared contact card snippet or by providing an extended dedicated
-        view
-      </p>
-      <hr>
-      <div tal:replace="structure view/render_contact_card" />
+      <div class="app-content">
+        <div class="app-content-main">
+          <div class="app-contact-position" tal:condition="viwe/has_position_info">
+            <span tal:condition="context/position" tal:replace="context/position" />
+            <span tal:condition="context/department" tal:replace="context/department" />
+          </div>
+          <address tal:condition="view/has_address_info">
+            ${context/address}<br>
+            ${context/zipcode} ${context/city}
+          </address>
+          <address>
+            Telefon: ${context/phone}<br>
+            E-Mail: <a href="${context/email}">${context/email}</a>
+          </address>
+        </div>
+        <div class="app-content-aside">
+          <tal:image tal:condition="view/has_image">
+              <figure class="app-page-image-container"
+                  tal:define="item_uuid context/UID;
+                              image_data python:view.get_image_data(item_uuid)">
+                  <div class="ratio-container unknown-ratio-container">
+                    <img class="lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-sizes="auto"
+                        data-src="${image_data/large}"
+                        data-srcset="${image_data/small},
+                                     ${image_data/medium},
+                                     ${image_data/large},
+                                     ${image_data/original}" />
+                  </div>
+                  <noscript>
+                    <!-- Provide fallback for missing lazyload javascript -->
+                    <img tal:define="has_img context/image|nothing;
+                                     scales context/@@images|nothing"
+                        tal:condition="python:has_img and scales"
+                        tal:replace="structure python: scales.scale('image', scale='mini').tag(css_class='newsImage')" />
+                  </noscript>
+                <figcaption tal:condition="exists:context/image_caption">
+                  ${context/image_caption}
+                </figcaption>
+              </figure>
+          </tal:image>
+        </div>
+      </div>
     </div>
 
   </metal:content-core>
