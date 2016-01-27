@@ -22,5 +22,15 @@
       layer="ade25.contacts.interfaces.IAde25ContactLayer"
       />
 
+  <!-- Standalone viewlet for contact cards -->
+  <browser:viewlet
+      name="ade25.contacts.contactcard"
+      class=".contactviewlet.ContactViewlet"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      template="contactviewlet.pt"
+      layer="ade25.contacts.interfaces.IAde25ContactLayer"
+      permission="zope2.View"
+      />
+
 
 </configure>
