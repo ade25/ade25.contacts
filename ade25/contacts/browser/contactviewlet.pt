@@ -1,3 +1,8 @@
-<div class="app-contact-viewlet" id="app-card-viewlet">
-	<p>We have assigned contact information</p>
+<div class="app-contact-viewlet" id="app-card-viewlet"
+	tal:condition="view/has_contacts">
+	<tal:items tal:repeat="item view/contact_assignments">
+		<div class="app-card-viewlet-item" tal:define="item_uid item/to_object/UID">
+			<div tal:replace="structure python:view.rendered_contact_card(item_uid)" />
+		</div>
+	</tal:items>
 </div>

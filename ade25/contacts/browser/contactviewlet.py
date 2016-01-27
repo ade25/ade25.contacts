@@ -2,6 +2,7 @@
 """Module holding contact viewlet"""
 
 from Acquisition import aq_inner
+from plone import api
 from plone.app.layout.viewlets import common as base
 
 from ade25.contacts.behaviors.contactassignment import IContactAssignment
@@ -20,6 +21,25 @@ class ContactViewlet(base.ViewletBase):
         if IContactAssignment.providedBy(context):
             return True
         return False
+
+    def has_contacts(self):
+        context = aq_inner(self.context)
+        try:
+            related_contacts = context.relatedContacts
+        except AttributeError:
+            related_contacts = None
+        if related_contacts is not None:
+            return True
+        return False
+
+    def contact_assignments(self):
+        context = aq_inner(self.context)
+        return context.relatedContacts
+
+    def rendered_contact_card(self, uuid):
+        context = api.content.get(UID=uuid)
+        template = context.restrictedTraverse('@@contact-card-view')()
+        return template
 
     def render(self):
         """ Render viewlet only on items with enabled behavior
