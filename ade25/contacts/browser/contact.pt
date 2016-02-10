@@ -23,7 +23,7 @@
     <div class="app-page-body">
       <div class="app-content">
         <div class="app-content-main">
-          <div class="app-contact-position" tal:condition="viwe/has_position_info">
+          <div class="app-contact-position" tal:condition="view/has_position_info">
             <span tal:condition="context/position" tal:replace="context/position" />
             <span tal:condition="context/department" tal:replace="context/department" />
           </div>
@@ -33,7 +33,7 @@
           </address>
           <address>
             Telefon: ${context/phone}<br>
-            E-Mail: <a href="${context/email}">${context/email}</a>
+            E-Mail: <a href="mailto:${context/email}">${context/email}</a>
           </address>
         </div>
         <div class="app-content-aside">
