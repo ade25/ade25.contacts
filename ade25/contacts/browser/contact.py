@@ -61,6 +61,12 @@ class ContactCardView(BrowserView):
             return True
         return False
 
+    def has_position_info(self):
+        context = aq_inner(self.context)
+        if context.position or context.department:
+            return True
+        return False
+
     def get_image_data(self, uuid):
         tool = getUtility(IContactImagesTool)
         return tool.create(uuid)

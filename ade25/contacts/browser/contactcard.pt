@@ -37,14 +37,17 @@
       </tal:image>
       <div class="app-card-content app-card-content-default">
       <address tal:condition="view/has_address_info">
-        ${context/position}<br>
-        ${context/department}<br>
         ${context/address}<br>
         ${context/zipcode} ${context/city}
       </address>
+      <div class="app-contact-position" tal:condition="view/has_position_info">
+        ${context/position}<br>
+        ${context/department}
+      </div>
       <address>
-        Telefon: ${context/phone}<br>
-        E-Mail: <a href="mailto:${context/email}">${context/email}</a>
+        <i class="fa fa-phone"></i> ${context/phone}<br>
+        <i class="fa fa-fax"></i> ${context/fax}<br>
+        <i class="fa fa-envelope-o"></i> <a href="mailto:${context/email}">${context/email}</a>
       </address>
       
     </div>

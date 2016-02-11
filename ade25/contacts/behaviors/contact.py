@@ -30,6 +30,11 @@ class IContactInformation(model.Schema):
         required=False
     )
 
+    fax = schema.TextLine(
+        title=_(u"Fax"),
+        required=False
+    )
+
     email = schema.TextLine(
         title=_(u"E-Mail"),
         required=False
