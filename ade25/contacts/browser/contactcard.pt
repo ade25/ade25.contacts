@@ -45,9 +45,9 @@
         ${context/department}
       </div>
       <address>
-        <i class="fa fa-phone"></i> ${context/phone}<br>
-        <i class="fa fa-fax"></i> ${context/fax}<br>
-        <i class="fa fa-envelope-o"></i> <a href="mailto:${context/email}">${context/email}</a>
+        <div class="app-contact-phone"> ${context/phone}</div>
+        <div class="app-contact-fax"> ${context/fax}</div>
+        <div class="app-contact-fax"> <a href="${context/absolute_url}/@@inquiry-form">Nachricht senden</div>
       </address>
       
     </div>
