@@ -48,8 +48,7 @@
         <div class="app-contact-phone"> ${context/phone}</div>
         <div class="app-contact-fax"> ${context/fax}</div>
         <div class="app-contact-fax"> <a href="${context/absolute_url}/@@inquiry-form">Nachricht senden</div>
-      </address>
-      
+      </address> 
     </div>
   </div>
 </div>
