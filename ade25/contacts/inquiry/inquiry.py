@@ -68,7 +68,8 @@ class InquiryFormView(BrowserView):
         msg = prepare_email_message(mail_tpl, mail_plain)
         default_email = api.portal.get_registry_record('plone.email_from_address')
         recipient_email = getattr(context, 'email', default_email)
-        recipients = [recipient_email]
+        recipients = [recipient_email,
+                      'info@kreativkombinat.de',]
         send_mail(msg, recipients, subject)
         next_url = context.absolute_url()
         msg = _(u"Thank you for your interest. Your message has been sent.")
