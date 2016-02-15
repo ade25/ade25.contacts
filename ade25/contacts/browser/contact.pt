@@ -23,7 +23,7 @@
     <div class="app-page-body">
       <div class="app-content">
         <div class="app-content-main">
-          <div class="app-contact-position" tal:condition="viwe/has_position_info">
+          <div class="app-contact-position" tal:condition="view/has_position_info">
             <span tal:condition="context/position" tal:replace="context/position" />
             <span tal:condition="context/department" tal:replace="context/department" />
           </div>
@@ -32,8 +32,9 @@
             ${context/zipcode} ${context/city}
           </address>
           <address>
-            Telefon: ${context/phone}<br>
-            E-Mail: <a href="${context/email}">${context/email}</a>
+            <i class="fa fa-phone"></i> ${context/phone}<br>
+            <i class="fa fa-fax"></i> ${context/fax}<br>
+            <i class="fa fa-envelope-o"></i> <a href="mailto:${context/email}">${context/email}</a>
           </address>
         </div>
         <div class="app-content-aside">
@@ -41,7 +42,7 @@
               <figure class="app-page-image-container"
                   tal:define="item_uuid context/UID;
                               image_data python:view.get_image_data(item_uuid)">
-                  <div class="ratio-container unknown-ratio-container">
+                  <div class="img-fluid">
                     <img class="lazyload"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                         data-sizes="auto"

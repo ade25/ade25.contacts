@@ -1,24 +1,19 @@
-<div class="app-card app-card-address">
+<div class="app-card app-card-contact">
   <div class="app-card-header">
     <div class="app-card-title">
       ${context/Title}
     </div>
   </div>
+  <p class="app-page-abstract" tal:condition="context/Description">
+    ${context/Description}
+  </p>
   <div class="app-card-main app-card-main-default">
-    <div class="app-card-content app-card-content-default">
-      <address tal:condition="view/has_address_info">
-        ${context/address}<br>
-        ${context/zipcode} ${context/city}
-      </address>
-      <address>
-        Telefon: ${context/phone}<br>
-        E-Mail: <a href="${context/email}">${context/email}</a>
-      </address>
+    
       <tal:image tal:condition="view/has_image">
         <figure class="app-page-image-container"
             tal:define="item_uuid context/UID;
                         image_data python:view.get_image_data(item_uuid)">
-            <div class="ratio-container unknown-ratio-container">
+            <div class="img-fluid">
               <img class="lazyload"
                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                   data-sizes="auto"
@@ -39,7 +34,21 @@
             ${context/image_caption}
           </figcaption>
         </figure>
-    </tal:image>
+      </tal:image>
+      <div class="app-card-content app-card-content-default">
+      <address tal:condition="view/has_address_info">
+        ${context/address}<br>
+        ${context/zipcode} ${context/city}
+      </address>
+      <div class="app-contact-position" tal:condition="view/has_position_info">
+        ${context/position}<br>
+        ${context/department}
+      </div>
+      <address>
+        <div class="app-contact-phone"> ${context/phone}</div>
+        <div class="app-contact-fax"> ${context/fax}</div>
+        <div class="app-contact-email btn btn-primary"> <a href="${context/absolute_url}/@@inquiry-form">Nachricht senden</div>
+      </address> 
     </div>
   </div>
 </div>
