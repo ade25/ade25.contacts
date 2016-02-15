@@ -25,7 +25,7 @@ from Products.MailHost.MailHost import MailHostError
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone.utils import safe_unicode
 
-logger = logging.getLogger('ck.sitecontent')
+logger = logging.getLogger('eda.sitecontent')
 
 DEFAULT_CHARSET = 'utf-8'
 

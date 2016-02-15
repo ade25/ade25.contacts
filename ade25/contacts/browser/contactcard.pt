@@ -35,7 +35,7 @@
               ${context/image_caption}
             </figcaption>
           </figure>
-        </tal:image>#
+        </tal:image>
       </div>
       <div class="app-card-content app-card-content-default">
         <address tal:condition="view/has_address_info">
