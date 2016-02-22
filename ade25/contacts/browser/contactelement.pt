@@ -28,25 +28,24 @@
     </tal:image>
   </div>
   <div class="app-contact-element-main">
-    <div class="app-contact-element-title">
-      ${context/Title}
-    </div>
-    <div class="app-contact-element-abstract" tal:condition="context/Description">
-      ${context/Description}
-    </div>
-    <address tal:condition="view/has_address_info">
-          ${context/address}<br>
-          ${context/zipcode} ${context/city}
-        </address>
-        <div class="app-contact-position" tal:condition="view/has_position_info">
-          ${context/position}<br>
-          ${context/department}
-        </div>
-        <address>
-          <div class="app-contact-phone"> ${context/phone}</div>
-          <div class="app-contact-fax"> ${context/fax}</div>
-        </address>
+      <div class="app-contact-element-title">
+        ${context/Title}
       </div>
+      <div class="app-contact-element-abstract" tal:condition="context/Description">
+        ${context/Description}
+      </div>
+      <address tal:condition="view/has_address_info">
+        ${context/address}<br>
+        ${context/zipcode} ${context/city}
+      </address>
+      <div class="app-contact-position" tal:condition="view/has_position_info">
+        ${context/position}<br>
+        ${context/department}
+      </div>
+      <address>
+        <div class="app-contact-phone"> ${context/phone}</div>
+        <div class="app-contact-fax"> ${context/fax}</div>
+      </address>
       <div class="app-contact-actions" tal:condition="context/url">
         <a class="app-contact-link"
             href="${context/url}">${context/url}</a>

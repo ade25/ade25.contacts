@@ -36,9 +36,30 @@ class ContactViewlet(base.ViewletBase):
         context = aq_inner(self.context)
         return context.relatedContacts
 
+    def contact_cards(self):
+        cards = list()
+        for contact in self.contact_assignments():
+            obj = contact.to_object
+            if not obj.display_element:
+                cards.append(obj)
+        return cards
+
+    def contact_elements(self):
+        elements = list()
+        for contact in self.contact_assignments():
+            obj = contact.to_object
+            if obj.display_element:
+                elements.append(obj)
+        return elements
+
     def rendered_contact_card(self, uuid):
         context = api.content.get(UID=uuid)
         template = context.restrictedTraverse('@@contact-card-view')()
+        return template
+
+    def rendered_contact_element(self, uuid):
+        context = api.content.get(UID=uuid)
+        template = context.restrictedTraverse('@@contact-element-view')()
         return template
 
     def render(self):

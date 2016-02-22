@@ -1,8 +1,17 @@
-<div class="app-contact-viewlet" id="app-card-viewlet"
+<div class="app-contact-viewlet"
 	tal:condition="view/has_contacts">
-	<tal:items tal:repeat="item view/contact_assignments">
-		<div class="app-card-viewlet-item" tal:define="item_uid item/to_object/UID">
-			<div tal:replace="structure python:view.rendered_contact_card(item_uid)" />
-		</div>
-	</tal:items>
+	<div class="app-contact-viewlet-cards" id="app-contact-viewlet-cards">
+		<tal:items tal:repeat="item view/contact_cards">
+			<div class="app-card-viewlet-item" tal:define="item_uid item/UID">
+				<div tal:replace="structure python:view.rendered_contact_card(item_uid)" />
+			</div>
+		</tal:items>
+	</div>
+	<div class="app-contact-viewlet-elements" id="app-contact-viewlet-elements">
+		<tal:items tal:repeat="item view/contact_elements">
+			<div class="app-card-viewlet-item" tal:define="item_uid item/UID">
+				<div tal:replace="structure python:view.rendered_contact_element(item_uid)" />
+			</div>
+		</tal:items>
+	</div>
 </div>
