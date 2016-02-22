@@ -35,6 +35,11 @@ class IContactInformation(model.Schema):
         required=False
     )
 
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
     email = schema.TextLine(
         title=_(u"E-Mail"),
         required=False
@@ -68,6 +73,18 @@ class IContactInformation(model.Schema):
     address_extra = schema.TextLine(
         title=_(u"Address Additional"),
         required=False
+    )
+
+    model.fieldset(
+        'display',
+        label=u"Contact Display",
+        fields=['display_element']
+    )
+    display_element = schema.Bool(
+        title=_(u"Check to enable content element display"),
+        description=_(u"When activated the view will attempt to display a "
+                      u"content element instead of a contact card"),
+        required=False,
     )
 
 
