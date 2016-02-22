@@ -22,6 +22,15 @@
       layer="ade25.contacts.interfaces.IAde25ContactLayer"
       />
 
+  <browser:page
+      for="ade25.contacts.contact.IContact"
+      name="contact-element-view"
+      class=".contact.ContactElementView"
+      template="contactelement.pt"
+      permission="zope2.View"
+      layer="ade25.contacts.interfaces.IAde25ContactLayer"
+      />
+
   <!-- Standalone viewlet for contact cards -->
   <browser:viewlet
       name="ade25.contacts.contactcard"
