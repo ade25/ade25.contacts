@@ -1,15 +1,15 @@
 <div class="app-card app-card-contact">
-  <div class="app-card-header">
+  <div class="app-card-header app-card-header-contact">
     <div class="app-card-title">
       ${context/Title}
     </div>
   </div>
-  <div class="app-card-main app-card-main-default">
+  <div class="app-card-main app-card-main-contact">
       <div class="app-card-content app-card-content-lead"
           tal:condition="context/Description">
         ${context/Description}
       </div>
-      <div class="app-card-content app-card-content-media">
+      <div class="app-card-content-media">
         <tal:image tal:condition="view/has_image">
           <figure class="app-page-image-container"
               tal:define="item_uuid context/UID;
@@ -51,8 +51,8 @@
           <div class="app-contact-fax"> ${context/fax}</div>
         </address>
       </div>
-      <div class="app-card-footer" tal:condition="context/email">
-        <a class="app-contact-email btn btn-primary"
+      <div class="app-card-footer-contacts" tal:condition="context/email">
+        <a class="app-contact-email btn btn-primary app-btn-contact-card"
             href="${context/absolute_url}/@@inquiry-form">Nachricht senden</a>
       </div>
   </div>
