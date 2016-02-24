@@ -38,20 +38,20 @@
         </tal:image>
       </div>
       <div class="app-card-content app-card-content-default">
-        <address tal:condition="view/has_address_info">
+        <address class="app-contact-block" tal:condition="view/has_address_info">
           ${context/address}<br>
           ${context/zipcode} ${context/city}
         </address>
-        <div class="app-contact-position" tal:condition="view/has_position_info">
+        <div class="app-contact-block app-contact-position" tal:condition="view/has_position_info">
           ${context/position}<br>
           ${context/department}
         </div>
-        <address>
+        <address class="app-contact-block">
           <div class="app-contact-phone"> ${context/phone}</div>
           <div class="app-contact-fax"> ${context/fax}</div>
         </address>
       </div>
-      <div class="app-card-footer-contacts" tal:condition="context/email">
+      <div class="app-card-footer app-card-footer-contacts" tal:condition="context/email">
         <a class="app-contact-email btn btn-primary app-btn-contact-card"
             href="${context/absolute_url}/@@inquiry-form">Nachricht senden</a>
       </div>
