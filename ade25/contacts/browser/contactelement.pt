@@ -34,15 +34,15 @@
       <div class="app-contact-element-abstract" tal:condition="context/Description">
         ${context/Description}
       </div>
-      <address tal:condition="view/has_address_info">
+      <address class="app-contanct-element-block" tal:condition="view/has_address_info">
         ${context/address}<br>
         ${context/zipcode} ${context/city}
       </address>
-      <div class="app-contact-position" tal:condition="view/has_position_info">
+      <div class="app-contact-element-block app-contact-position" tal:condition="view/has_position_info">
         ${context/position}<br>
         ${context/department}
       </div>
-      <address>
+      <address  lass="app-contact-element-block">
         <div class="app-contact-phone"> ${context/phone}</div>
         <div class="app-contact-fax"> ${context/fax}</div>
       </address>
