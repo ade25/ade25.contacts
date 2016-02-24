@@ -21,7 +21,7 @@ class InquiryFormView(BrowserView):
     def __call__(self):
         self.errors = {}
         unwanted = ('_authenticator', 'form.button.Submit')
-        required = ('title')
+        required = ('email', 'subject')
         if 'form.button.Submit' in self.request:
             authenticator = getMultiAdapter((self.context, self.request),
                                             name=u"authenticator")
@@ -69,7 +69,7 @@ class InquiryFormView(BrowserView):
         default_email = api.portal.get_registry_record('plone.email_from_address')
         recipient_email = getattr(context, 'email', default_email)
         recipients = [recipient_email,
-                      'info@kreativkombinat.de',]
+                      'info@kreativkombinat.de']
         send_mail(msg, recipients, subject)
         next_url = context.absolute_url()
         msg = _(u"Thank you for your interest. Your message has been sent.")
