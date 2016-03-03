@@ -1,15 +1,15 @@
 <div class="app-card app-card-contact">
-  <div class="app-card-header">
+  <div class="app-card-header app-card-header-contact">
     <div class="app-card-title">
       ${context/Title}
     </div>
   </div>
-  <div class="app-card-main app-card-main-contacts">
+  <div class="app-card-main app-card-main-contact">
       <div class="app-card-content app-card-content-lead"
           tal:condition="context/Description">
         ${context/Description}
       </div>
-      <div class="app-card-content app-card-content-media">
+      <div class="app-card-content-media">
         <tal:image tal:condition="view/has_image">
           <figure class="app-page-image-container"
               tal:define="item_uuid context/UID;

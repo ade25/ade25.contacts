@@ -9,7 +9,7 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
-
+    <div class="app-contact-standalone">
     <div class="app-page-header">
       <div class="app-page-title">
           <h1 class="app-page-headline" tal:content="context/Title">
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-
+  </div>
   </metal:content-core>
 </metal:main>
 
