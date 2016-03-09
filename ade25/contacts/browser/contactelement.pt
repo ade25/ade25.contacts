@@ -1,6 +1,5 @@
 <div class="app-contact-element">
-  <div class="app-contact-element-aside">
-    <tal:image tal:condition="view/has_image">
+  <div class="app-contact-element-aside" tal:condition="view/has_image">
       <figure class="app-contact-element-media"
           tal:define="item_uuid context/UID;
                       image_data python:view.get_image_data(item_uuid)">
@@ -25,7 +24,6 @@
           ${context/image_caption}
         </figcaption>
       </figure>
-    </tal:image>
   </div>
   <div class="app-contact-element-main">
       <div class="app-contact-element-title">

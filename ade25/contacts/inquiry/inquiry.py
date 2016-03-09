@@ -20,6 +20,9 @@ class InquiryFormView(BrowserView):
 
     def __call__(self):
         self.errors = {}
+        return self.render()
+
+    def update(self):
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ('email', 'subject')
         if 'form.button.Submit' in self.request:
@@ -49,7 +52,6 @@ class InquiryFormView(BrowserView):
                 self.errors = form_errors
             else:
                 self.send_inquiry(form)
-        return self.render()
 
     def render(self):
         return self.index()
