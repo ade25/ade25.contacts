@@ -2,7 +2,7 @@
   tal:define="error errors/subject | nothing;
               err_msg python:error and error['active'] == True;
               value request/subject | nothing"
-  tal:attributes="class python:err_msg and 'app-form-group app-field-subject has-error' or 'app-form-group app-field-subject'">
+  tal:attributes="class python:err_msg and 'app-form-group app-field-subject app-field-required has-error' or 'app-form-group app-field-subject app-field-required'">
 
   <label for="subject"
     i18n:translate="">Betreff</label>

@@ -54,6 +54,7 @@ class InquiryFormView(BrowserView):
                 self.send_inquiry(form)
 
     def render(self):
+        self.update()
         return self.index()
 
     def default_value(self, error):
