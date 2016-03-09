@@ -47,8 +47,8 @@
           ${context/department}
         </div>
         <address class="app-contact-block">
-          <div class="app-contact-phone"> ${context/phone}</div>
-          <div class="app-contact-fax"> ${context/fax}</div>
+          <div class="app-contact-phone" tal:condition="context/phone"> ${context/phone}</div>
+          <div class="app-contact-fax" tal:condition="context/fax"> ${context/fax}</div>
         </address>
       </div>
       <div class="app-card-footer app-card-footer-contacts" tal:condition="context/email">
