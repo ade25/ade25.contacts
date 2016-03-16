@@ -15,7 +15,6 @@ from ade25.contacts import _
 class IContactInformation(model.Schema):
     """Behavior providing contact information"""
 
-
     position = schema.TextLine(
         title=_(u"Position"),
         required=False
@@ -31,6 +30,16 @@ class IContactInformation(model.Schema):
         required=False
     )
 
+    fax = schema.TextLine(
+        title=_(u"Fax"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
     email = schema.TextLine(
         title=_(u"E-Mail"),
         required=False
@@ -39,7 +48,7 @@ class IContactInformation(model.Schema):
     enquiry = schema.Bool(
         title=_(u"Check to enable direct enquiry"),
         description=_(u"When activated the contact card will link to an "
-                       "direct enquiry form"),
+                      u"direct enquiry form"),
         required=False,
     )
 
@@ -64,6 +73,18 @@ class IContactInformation(model.Schema):
     address_extra = schema.TextLine(
         title=_(u"Address Additional"),
         required=False
+    )
+
+    model.fieldset(
+        'display',
+        label=u"Contact Display",
+        fields=['display_element']
+    )
+    display_element = schema.Bool(
+        title=_(u"Check to enable content element display"),
+        description=_(u"When activated the view will attempt to display a "
+                      u"content element instead of a contact card"),
+        required=False,
     )
 
 

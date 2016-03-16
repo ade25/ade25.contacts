@@ -12,6 +12,9 @@
 
     <include package=".behaviors" />
     <include package=".browser" />
+    <include package=".inquiry" />
+
+    <include file="indexers.zcml" />
 
     <!-- Register locales directory -->
     <i18n:registerTranslations directory="locales" />
@@ -30,10 +33,9 @@
         type="theme"
     />
 
-    <adapter
-        for="ade25.contacts.contact.IContact"
-        provides="ade25.contacts.contact.ITitleFromContactName"
-        factory="ade25.contacts.contact.TitleFromContactName"
-    />
+    <utility
+        provides="ade25.contacts.interfaces.IContactImagesTool"
+        factory="ade25.contacts.imagetool.ContactImagesTool"
+        />
 
 </configure>

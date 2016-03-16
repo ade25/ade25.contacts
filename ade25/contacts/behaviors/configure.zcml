@@ -25,4 +25,13 @@
     marker=".portrait.IPortrait"
     />
 
+  <plone:behavior
+    title="Contact Assignment"
+    description="Assign contact cards via selection"
+    provides=".contactassignment.IContactAssignment"
+    factory=".contactassignment.ContactAssignment"
+    for="plone.dexterity.interfaces.IDexterityContent"
+    marker=".contactassignment.IContactAssignment"
+    />
+
 </configure>
