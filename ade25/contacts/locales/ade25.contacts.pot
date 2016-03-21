@@ -1,0 +1,146 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-03-21 14:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ade25.contacts\n"
+
+#: ./../behaviors/portrait.py:19
+msgid "Add portrait image for contact card"
+msgstr ""
+
+#: ./../behaviors/contact.py:70
+msgid "Address"
+msgstr ""
+
+#: ./../behaviors/contact.py:74
+msgid "Address Additional"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:17
+msgid "Adds contact information and address fields"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:26
+msgid "Adds image to contact cards"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:35
+msgid "Assign contact cards via selection"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:66
+msgid "Betreff"
+msgstr ""
+
+#: ./../behaviors/contact.py:84
+msgid "Check to enable content element display"
+msgstr ""
+
+#: ./../behaviors/contact.py:49
+msgid "Check to enable direct enquiry"
+msgstr ""
+
+#: ./../behaviors/contact.py:62
+msgid "City"
+msgstr ""
+
+#: ./../profiles/default/types/ade25.contacts.contact.xml
+msgid "Contact"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:35
+msgid "Contact Assignment"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:17
+msgid "Contact Information"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:26
+msgid "Contact Portrait"
+msgstr ""
+
+#: ./../behaviors/contact.py:24
+msgid "Department"
+msgstr ""
+
+#: ./../behaviors/contact.py:44
+msgid "E-Mail"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:37
+msgid "E-Mail-Adresse"
+msgstr ""
+
+#: ./../behaviors/contact.py:34
+msgid "Fax"
+msgstr ""
+
+#: ./../contact.py:19
+msgid "First name"
+msgstr ""
+
+#: ./../inquiry/inquiry.py:68
+msgid "Inquiry from website visitor"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:93
+msgid "Jetzt senden"
+msgstr ""
+
+#: ./../contact.py:24
+msgid "Last name"
+msgstr ""
+
+#: ./../behaviors/contact.py:29
+msgid "Phone"
+msgstr ""
+
+#: ./../behaviors/portrait.py:18
+msgid "Portrait"
+msgstr ""
+
+#: ./../behaviors/contact.py:19
+msgid "Position"
+msgstr ""
+
+#: ./../behaviors/contactassignment.py:34
+msgid "Related"
+msgstr ""
+
+#: ./../inquiry/inquiry.py:78
+msgid "Thank you for your interest. Your message has been sent."
+msgstr ""
+
+#: ./../inquiry/inquiry.py:43
+msgid "This field is required"
+msgstr ""
+
+#: ./../behaviors/contact.py:39
+msgid "URL"
+msgstr ""
+
+#: ./../behaviors/contact.py:50
+msgid "When activated the contact card will link to an direct enquiry form"
+msgstr ""
+
+#: ./../behaviors/contact.py:85
+msgid "When activated the view will attempt to display a content element instead of a contact card"
+msgstr ""
+
+#: ./../behaviors/contact.py:66
+msgid "Zipcode"
+msgstr ""
