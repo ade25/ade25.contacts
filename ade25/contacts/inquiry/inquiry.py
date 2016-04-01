@@ -12,7 +12,7 @@ from ade25.contacts.inquiry.mailer import prepare_email_message
 from ade25.contacts.inquiry.mailer import get_mail_template
 from ade25.contacts.inquiry.mailer import send_mail
 
-from ade25.contacts import _
+from ade25.contacts import MessageFactory as _
 
 
 class InquiryFormView(BrowserView):
@@ -23,6 +23,7 @@ class InquiryFormView(BrowserView):
         return self.render()
 
     def update(self):
+        translation_service = api.get_tool(name="translation_service")
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ('email', 'subject')
         if 'form.button.Submit' in self.request:
@@ -39,8 +40,11 @@ class InquiryFormView(BrowserView):
                     form_data[value] = safe_unicode(form[value])
                     if not form[value] and value in required:
                         error = {}
+                        error_msg = _(u"This field is required")
                         error['active'] = True
-                        error['msg'] = _(u"This field is required")
+                        error['msg'] = translation_service.translate(
+                            error_msg
+                        )
                         form_errors[value] = error
                         errorIdx += 1
                     else:
@@ -64,6 +68,7 @@ class InquiryFormView(BrowserView):
         return value
 
     def send_inquiry(self, data):
+        translation_service = api.get_tool(name="translation_service")
         context = aq_inner(self.context)
         subject = _(u"Inquiry from website visitor")
         mail_tpl = self._compose_message(data)
@@ -73,7 +78,11 @@ class InquiryFormView(BrowserView):
         recipient_email = getattr(context, 'email', default_email)
         recipients = [recipient_email,
                       'info@kreativkombinat.de']
-        send_mail(msg, recipients, subject)
+        send_mail(
+            msg,
+            recipients,
+            translation_service.translate(subject)
+        )
         next_url = context.absolute_url()
         msg = _(u"Thank you for your interest. Your message has been sent.")
         api.portal.show_message(message=msg, request=self.request)
