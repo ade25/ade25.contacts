@@ -23,7 +23,7 @@ class InquiryFormView(BrowserView):
         return self.render()
 
     def update(self):
-        translation_service = api.get_tool(name="translation_service")
+        translation_service = api.portal.get_tool(name="translation_service")
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ('email', 'subject')
         if 'form.button.Submit' in self.request:
@@ -70,7 +70,7 @@ class InquiryFormView(BrowserView):
         return value
 
     def send_inquiry(self, data):
-        translation_service = api.get_tool(name="translation_service")
+        translation_service = api.portal.get_tool(name="translation_service")
         context = aq_inner(self.context)
         subject = _(u"Inquiry from website visitor")
         mail_tpl = self._compose_message(data)
