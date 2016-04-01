@@ -12,7 +12,7 @@ from ade25.contacts.inquiry.mailer import prepare_email_message
 from ade25.contacts.inquiry.mailer import get_mail_template
 from ade25.contacts.inquiry.mailer import send_mail
 
-from ade25.contacts import MessageFactory as _
+from ade25.contacts import _
 
 
 class InquiryFormView(BrowserView):
@@ -43,7 +43,9 @@ class InquiryFormView(BrowserView):
                         error_msg = _(u"This field is required")
                         error['active'] = True
                         error['msg'] = translation_service.translate(
-                            error_msg
+                            error_msg,
+                            'ade25.contacts',
+                            target_language=api.portal.get_default_language()
                         )
                         form_errors[value] = error
                         errorIdx += 1
@@ -81,7 +83,11 @@ class InquiryFormView(BrowserView):
         send_mail(
             msg,
             recipients,
-            translation_service.translate(subject)
+            translation_service.utranslate(
+                subject,
+                'ade25.contacts',
+                target_language=api.portal.get_default_language()
+            )
         )
         next_url = context.absolute_url()
         msg = _(u"Thank you for your interest. Your message has been sent.")

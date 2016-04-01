@@ -3,8 +3,6 @@
 
 from zope.i18nmessageid import MessageFactory
 
-MessageFactory = MessageFactory('ade25.contact')
-
 _ = MessageFactory('ade25.contact')
 
 
