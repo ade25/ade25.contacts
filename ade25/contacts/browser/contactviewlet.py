@@ -40,7 +40,7 @@ class ContactViewlet(base.ViewletBase):
         cards = list()
         for contact in self.contact_assignments():
             obj = contact.to_object
-            if not obj.display_element:
+            if obj and not obj.display_element:
                 cards.append(obj)
         return cards
 
@@ -48,7 +48,7 @@ class ContactViewlet(base.ViewletBase):
         elements = list()
         for contact in self.contact_assignments():
             obj = contact.to_object
-            if obj.display_element:
+            if obj and obj.display_element:
                 elements.append(obj)
         return elements
 
