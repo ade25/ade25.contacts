@@ -63,6 +63,16 @@ class InquiryFormView(BrowserView):
         self.update()
         return self.index()
 
+    @property
+    def traverse_subpath(self):
+        return self.subpath
+
+    def publishTraverse(self, request, name):
+        if not hasattr(self, 'subpath'):
+            self.subpath = []
+        self.subpath.append(name)
+        return self
+
     def default_value(self, error):
         value = ''
         if error['active'] is False:
@@ -72,13 +82,18 @@ class InquiryFormView(BrowserView):
     def send_inquiry(self, data):
         translation_service = api.portal.get_tool(name="translation_service")
         context = aq_inner(self.context)
+        if self.subpath:
+            contact_uid = self.subpath[0]
+            contact_obj = api.content.get(UID=contact_uid)
         subject = _(u"Inquiry from website visitor")
         mail_tpl = self._compose_message(data)
         mail_plain = create_plaintext_message(mail_tpl)
         msg = prepare_email_message(mail_tpl, mail_plain)
         default_email = api.portal.get_registry_record('plone.email_from_address')
         recipient_email = getattr(context, 'email', default_email)
-        recipients = [recipient_email,]
+        if contact_obj:
+            recipient_email = getattr(contact_obj, 'email', default_email)
+        recipients = [recipient_email, ]
         send_mail(
             msg,
             recipients,

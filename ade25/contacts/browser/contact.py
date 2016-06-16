@@ -2,6 +2,7 @@
 """Module providing views for contact page type"""
 from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
+from plone import api
 from zope.component import getUtility
 
 from ade25.contacts.interfaces import IContactImagesTool
@@ -71,9 +72,33 @@ class ContactCardView(BrowserView):
         tool = getUtility(IContactImagesTool)
         return tool.create(uuid)
 
+    def get_inquiry_form_link(self):
+        context = aq_inner(self.context)
+        assignment_context_uid = self.params.get('uuid', None)
+        if assignment_context_uid:
+            assignment_context = api.content.get(UID=assignment_context_uid)
+            uri = '{0}/@@inquiry-form/{1}'.format(
+                assignment_context.absolute_url(),
+                context.UID()
+            )
+        else:
+            uri = '{0}/@@inquiry-form/{1}'.format(
+                context.absolute_url(),
+                context.UID()
+            )
+        return uri
+
 
 class ContactElementView(BrowserView):
     """ Contact object element view usable below content main viewlet """
+
+    def __call__(self, **kw):
+        self.params = {}
+        self.params.update(kw)
+        return self.render()
+
+    def render(self):
+        return self.index()
 
     def has_image(self):
         context = aq_inner(self.context)
@@ -100,3 +125,19 @@ class ContactElementView(BrowserView):
     def get_image_data(self, uuid):
         tool = getUtility(IContactImagesTool)
         return tool.create(uuid)
+
+    def get_inquiry_form_link(self):
+        context = aq_inner(self.context)
+        assignment_context_uid = self.params.get('uuid', None)
+        if assignment_context_uid:
+            assignment_context = api.content.get(UID=assignment_context_uid)
+            uri = '{0}/@@inquiry-form/{1}'.format(
+                assignment_context.absolute_url(),
+                context.UID()
+            )
+        else:
+            uri = '{0}/@@inquiry-form/{1}'.format(
+                context.absolute_url(),
+                context.UID()
+            )
+        return uri

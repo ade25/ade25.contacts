@@ -1,4 +1,4 @@
-<div class="app-contact-viewlet"
+<div class="app-contact-viewlet" id="app-contact-viewlet"
 	tal:condition="view/has_contacts">
 	<div class="app-contact-viewlet-cards" id="app-contact-viewlet-cards">
 		<tal:items tal:repeat="item view/contact_cards">

@@ -33,7 +33,7 @@ class IContactAssignment(model.Schema):
         value_type=RelationChoice(
             title=_(u"Related"),
             source=CatalogSource(
-                portal_type='ade25.contacts.contact',
+                portal_type=['ade25.contacts.contact'],
                 review_state="published"
             )
         ),

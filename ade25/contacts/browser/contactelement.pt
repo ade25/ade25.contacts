@@ -51,7 +51,7 @@
       <div class="app-contact-actions" tal:condition="context/enquiry">
         <a class="app-contact-email btn btn-primary"
             tal:condition="context/email"
-            href="${context/absolute_url}/@@inquiry-form">Nachricht senden</a>
+            href="${view/get_inquiry_form_link}">Nachricht senden</a>
       </div>
   </div>
 </div>
