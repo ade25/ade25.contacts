@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-03-21 14:09+0000\n"
+"POT-Creation-Date: 2016-06-27 14:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
-#: ./../inquiry/inquiry.py:68
+#: ./../inquiry/inquiry.py:88
 msgid "Inquiry from website visitor"
 msgstr ""
 
@@ -121,11 +121,12 @@ msgstr ""
 msgid "Related"
 msgstr ""
 
-#: ./../inquiry/inquiry.py:78
+#: ./../inquiry/inquiry.py:107
 msgid "Thank you for your interest. Your message has been sent."
 msgstr ""
 
 #: ./../inquiry/inquiry.py:43
+#: ./../inquiry/inquiryform.pt:55
 msgid "This field is required"
 msgstr ""
 

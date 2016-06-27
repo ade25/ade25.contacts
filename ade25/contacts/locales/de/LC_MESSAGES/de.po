@@ -2,145 +2,146 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: 2016-06-27 14:12+0000\n"
-"PO-Revision-Date: 2016-03-21 21:20+0100\n"
-"Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
+"PO-Revision-Date: 2016-06-27 16:27+0200\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language-Code: de\n"
 "Language-Name: German\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ade25.contacts\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
 "Language: de\n"
-"X-Generator: Poedit 1.8.7\n"
 
-#: ./../behaviors/portrait.py:19
+#: ../behaviors/portrait.py:19
 msgid "Add portrait image for contact card"
 msgstr "Fügen Sie ein ein Portraitfoto hinzu"
 
-#: ./../behaviors/contact.py:70
+#: ../behaviors/contact.py:70
 msgid "Address"
 msgstr "Adresse"
 
-#: ./../behaviors/contact.py:74
+#: ../behaviors/contact.py:74
 msgid "Address Additional"
-msgstr "Adresse Zusatz"
+msgstr "Adresszusatz"
 
-#: ./../behaviors/configure.zcml:17
+#: ../behaviors/configure.zcml:17
 msgid "Adds contact information and address fields"
 msgstr "Fügt Kontakt- und Adressfelder hinzu"
 
-#: ./../behaviors/configure.zcml:26
+#: ../behaviors/configure.zcml:26
 msgid "Adds image to contact cards"
 msgstr "Fügt Bildupload zu Kontakmodul hinzu"
 
-#: ./../behaviors/configure.zcml:35
+#: ../behaviors/configure.zcml:35
 msgid "Assign contact cards via selection"
 msgstr "Kontaktmodulzuweisung via Auswahl"
 
-#: ./../inquiry/inquiryform.pt:66
+#: ../inquiry/inquiryform.pt:66
 msgid "Betreff"
 msgstr "Betreff"
 
-#: ./../behaviors/contact.py:84
+#: ../behaviors/contact.py:84
 msgid "Check to enable content element display"
 msgstr "Anzeige im Inhaltsbereich aktivieren"
 
-#: ./../behaviors/contact.py:49
+#: ../behaviors/contact.py:49
 msgid "Check to enable direct enquiry"
 msgstr "Verweis auf Kontaktformular aktivieren"
 
-#: ./../behaviors/contact.py:62
+#: ../behaviors/contact.py:62
 msgid "City"
 msgstr "Stadt"
 
-#: ./../profiles/default/types/ade25.contacts.contact.xml
+#: ../profiles/default/types/ade25.contacts.contact.xml
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ./../behaviors/configure.zcml:35
+#: ../behaviors/configure.zcml:35
 msgid "Contact Assignment"
 msgstr "Kontaktmodulzuweisung"
 
-#: ./../behaviors/configure.zcml:17
+#: ../behaviors/configure.zcml:17
 msgid "Contact Information"
 msgstr "Kontaktinformation"
 
-#: ./../behaviors/configure.zcml:26
+#: ../behaviors/configure.zcml:26
 msgid "Contact Portrait"
 msgstr "Kontaktfoto"
 
-#: ./../behaviors/contact.py:24
+#: ../behaviors/contact.py:24
 msgid "Department"
 msgstr "Abteilung"
 
-#: ./../behaviors/contact.py:44
+#: ../behaviors/contact.py:44
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: ./../inquiry/inquiryform.pt:37
+#: ../inquiry/inquiryform.pt:37
 msgid "E-Mail-Adresse"
 msgstr "E-Mail-Adresse"
 
-#: ./../behaviors/contact.py:34
+#: ../behaviors/contact.py:34
 msgid "Fax"
 msgstr "Fax"
 
-#: ./../contact.py:19
+#: ../contact.py:19
 msgid "First name"
-msgstr "Name"
+msgstr "Vorname"
 
-#: ./../inquiry/inquiry.py:88
+#: ../inquiry/inquiry.py:88
 msgid "Inquiry from website visitor"
 msgstr "Anfrage von einem Besucher der Webseite"
 
-#: ./../inquiry/inquiryform.pt:93
+#: ../inquiry/inquiryform.pt:93
 msgid "Jetzt senden"
 msgstr "Jetzt senden"
 
-#: ./../contact.py:24
+#: ../contact.py:24
 msgid "Last name"
 msgstr "Nachname"
 
-#: ./../behaviors/contact.py:29
+#: ../behaviors/contact.py:29
 msgid "Phone"
 msgstr "Telefon"
 
-#: ./../behaviors/portrait.py:18
+#: ../behaviors/portrait.py:18
 msgid "Portrait"
 msgstr "Porträt"
 
-#: ./../behaviors/contact.py:19
+#: ../behaviors/contact.py:19
 msgid "Position"
 msgstr "Position"
 
-#: ./../behaviors/contactassignment.py:34
+#: ../behaviors/contactassignment.py:34
 msgid "Related"
 msgstr "Verwandt"
 
-#: ./../inquiry/inquiry.py:107
+#: ../inquiry/inquiry.py:107
 msgid "Thank you for your interest. Your message has been sent."
-msgstr "Vielen Dank für Ihr Interesse. Ihre Nachricht wurde versendet"
+msgstr "Vielen Dank für Ihr Interesse. Ihre Nachricht an uns wurde versendet."
 
-#: ./../inquiry/inquiry.py:43
-#: ./../inquiry/inquiryform.pt:55
+#: ../inquiry/inquiry.py:43 ../inquiry/inquiryform.pt:55
 msgid "This field is required"
-msgstr "Dies ist ein Pflichtfeld"
+msgstr "Dieses Feld ist ein Pflichtfeld."
 
-#: ./../behaviors/contact.py:39
+#: ../behaviors/contact.py:39
 msgid "URL"
 msgstr "URL"
 
-#: ./../behaviors/contact.py:50
+#: ../behaviors/contact.py:50
 msgid "When activated the contact card will link to an direct enquiry form"
 msgstr "Verweis auf Kontaktfomular aktivieren"
 
-#: ./../behaviors/contact.py:85
-msgid "When activated the view will attempt to display a content element instead of a contact card"
+#: ../behaviors/contact.py:85
+msgid ""
+"When activated the view will attempt to display a content element instead of "
+"a contact card"
 msgstr "Anzeige im Inhaltsbereich aktivieren"
 
-#: ./../behaviors/contact.py:66
+#: ../behaviors/contact.py:66
 msgid "Zipcode"
 msgstr "Postleitzahl"
