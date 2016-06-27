@@ -86,9 +86,10 @@ class InquiryFormView(BrowserView):
             contact_uid = self.subpath[0]
             contact_obj = api.content.get(UID=contact_uid)
         subject = _(u"Inquiry from website visitor")
-        subject_translated = translation_service.translate(
-            subject,
+        subject_translated = translation_service.utranslate(
+            u"Inquiry from website visitor",
             'ade25.contacts',
+            context=context,
             target_language=api.portal.get_default_language()
         )
         mail_tpl = self._compose_message(data)
