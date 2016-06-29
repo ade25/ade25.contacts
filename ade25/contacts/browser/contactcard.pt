@@ -1,4 +1,5 @@
-<div class="app-card app-card-contact">
+<div class="app-card app-card-contact"
+     i18n:domain="ade25.contacts">
   <div class="app-card-header app-card-header-contact">
     <div class="app-card-title">
       ${context/Title}
