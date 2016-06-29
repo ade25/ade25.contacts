@@ -110,8 +110,6 @@ class InquiryFormView(BrowserView):
             context.absolute_url(),
             self.traverse_subpath[0]
         )
-        msg = _(u"Thank you for your interest. Your message has been sent.")
-        api.portal.show_message(message=msg, request=self.request)
         return self.request.response.redirect(next_url)
 
     def _compose_message(self, data):
