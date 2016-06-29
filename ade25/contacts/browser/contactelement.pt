@@ -1,4 +1,5 @@
-<div class="app-contact-element">
+<div class="app-contact-element"
+  i18n:domain="ade25.contacts">
   <div class="app-contact-element-aside" tal:condition="view/has_image">
       <figure class="app-contact-element-media"
           tal:define="item_uuid context/UID;
@@ -51,7 +52,8 @@
       <div class="app-contact-actions" tal:condition="context/enquiry">
         <a class="app-contact-email btn btn-primary"
             tal:condition="context/email"
-            href="${view/get_inquiry_form_link}">Nachricht senden</a>
+            href="${view/get_inquiry_form_link}"
+            i18n:translate="">Send message</a>
       </div>
   </div>
 </div>

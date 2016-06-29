@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2016-06-29 11:41+0000\n"
-"PO-Revision-Date: 2016-06-29 10:13+0200\n"
+"POT-Creation-Date: 2016-06-29 12:07+0000\n"
+"PO-Revision-Date: 2016-06-29 14:07+0200\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,146 +14,162 @@ msgstr ""
 "Language-Name: German\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ade25.contacts\n"
-"Language: de\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: ./../behaviors/portrait.py:19
+#: ../behaviors/portrait.py:19
 msgid "Add portrait image for contact card"
 msgstr "Fügen Sie ein ein Portraitfoto hinzu"
 
-#: ./../behaviors/contact.py:70
+#: ../behaviors/contact.py:70
 msgid "Address"
 msgstr "Adresse"
 
-#: ./../behaviors/contact.py:74
+#: ../behaviors/contact.py:74
 msgid "Address Additional"
 msgstr "Adresse Zusatz"
 
-#: ./../behaviors/configure.zcml:17
+#: ../behaviors/configure.zcml:17
 msgid "Adds contact information and address fields"
 msgstr "Fügt Kontakt- und Adressfelder hinzu"
 
-#: ./../behaviors/configure.zcml:26
+#: ../behaviors/configure.zcml:26
 msgid "Adds image to contact cards"
 msgstr "Fügt Bildupload zu Kontakmodul hinzu"
 
-#: ./../behaviors/configure.zcml:35
+#: ../inquiry/inquiryform.pt:27
+msgid "All fields marked with <code>*</code> are required."
+msgstr "Alle Felder markiert mit <code>*</code> sind Pflichtfelder."
+
+#: ../behaviors/configure.zcml:35
 msgid "Assign contact cards via selection"
 msgstr "Kontaktmodulzuweisung via Auswahl"
 
-#: ./../inquiry/inquiryform.pt:66
-msgid "Betreff"
-msgstr "Betreff"
-
-#: ./../behaviors/contact.py:84
+#: ../behaviors/contact.py:84
 msgid "Check to enable content element display"
 msgstr "Anzeige im Inhaltsbereich aktivieren"
 
-#: ./../behaviors/contact.py:49
+#: ../behaviors/contact.py:49
 msgid "Check to enable direct enquiry"
 msgstr "Verweis auf Kontaktformular aktivieren"
 
-#: ./../behaviors/contact.py:62
+#: ../behaviors/contact.py:62
 msgid "City"
 msgstr "Stadt"
 
-#: ./../profiles/default/types/ade25.contacts.contact.xml
+#: ../profiles/default/types/ade25.contacts.contact.xml
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ./../behaviors/configure.zcml:35
+#: ../behaviors/configure.zcml:35
 msgid "Contact Assignment"
 msgstr "Kontaktmodulzuweisung"
 
-#: ./../behaviors/configure.zcml:17
+#: ../behaviors/configure.zcml:17
 msgid "Contact Information"
 msgstr "Kontaktinformation"
 
-#: ./../behaviors/configure.zcml:26
+#: ../behaviors/configure.zcml:26
 msgid "Contact Portrait"
 msgstr "Kontaktfoto"
 
-#: ./../behaviors/contact.py:24
+#: ../behaviors/contact.py:24
 msgid "Department"
 msgstr "Abteilung"
 
-#: ./../behaviors/contact.py:44
+#: ../behaviors/contact.py:44 ../inquiry/inquiryform.pt:38
 msgid "E-Mail"
-msgstr "E-Mail"
-
-#: ./../inquiry/inquiryform.pt:37
-msgid "E-Mail-Adresse"
 msgstr "E-Mail-Adresse"
 
-#: ./../behaviors/contact.py:34
+#: ../behaviors/contact.py:34
 msgid "Fax"
 msgstr "Fax"
 
-#: ./../contact.py:19
+#: ../contact.py:19
 msgid "First name"
 msgstr "Name"
 
-#: ./../inquiry/inquiryformdispatched.pt:14
+#: ../inquiry/inquiryform.pt:14 ../inquiry/inquiryformdispatched.pt:14
 msgid "Inquiry form"
-msgstr ""
+msgstr "Anfrageformular"
 
-#: ./../inquiry/inquiryform.pt:93
-msgid "Jetzt senden"
-msgstr "Jetzt senden"
-
-#: ./../contact.py:24
+#: ../contact.py:24
 msgid "Last name"
 msgstr "Nachname"
 
-#: ./../behaviors/contact.py:29
+#: ../behaviors/contact.py:29
 msgid "Phone"
 msgstr "Telefon"
 
-#: ./../behaviors/portrait.py:18
+#: ../behaviors/portrait.py:18
 msgid "Portrait"
 msgstr "Porträt"
 
-#: ./../behaviors/contact.py:19
+#: ../behaviors/contact.py:19
 msgid "Position"
 msgstr "Position"
 
-#: ./../behaviors/contactassignment.py:34
+#: ../behaviors/contactassignment.py:34
 msgid "Related"
 msgstr "Verwandt"
 
-#: ./../browser/contactcard.pt:56
+#: ../browser/contactcard.pt:56 ../browser/contactelement.pt:53
 msgid "Send message"
 msgstr "Nachricht senden"
 
-#: ./../inquiry/inquiryformdispatched.pt:28
-msgid "Thank you for your interest. We will get in touch with you as soon as possible."
-msgstr ""
+#: ../inquiry/inquiryform.pt:67
+msgid "Subject"
+msgstr "Betreff"
 
-#: ./../inquiry/inquiry.py:113
+#: ../inquiry/inquiryform.pt:114
+msgid "Submit"
+msgstr "Abschicken"
+
+#: ../inquiry/inquiryformdispatched.pt:28
+msgid ""
+"Thank you for your interest. We will get in touch with you as soon as "
+"possible."
+msgstr ""
+"Vielen Dank für Ihr Interesse. Wir werden uns sobald wie möglich mit Ihrem "
+"Anliegen auseinandersetzen."
+
+#: ../inquiry/inquiry.py:113
 msgid "Thank you for your interest. Your message has been sent."
 msgstr "Vielen Dank für Ihr Interesse. Ihre Nachricht wurde versendet"
 
-#: ./../inquiry/inquiry.py:45
-#: ./../inquiry/inquiryform.pt:55
+#: ../inquiry/inquiry.py:45 ../inquiry/inquiryform.pt:56
 msgid "This field is required"
 msgstr "Dies ist ein Pflichtfeld"
 
-#: ./../behaviors/contact.py:39
+#: ../behaviors/contact.py:39
 msgid "URL"
 msgstr "URL"
 
-#: ./../behaviors/contact.py:50
+#: ../behaviors/contact.py:50
 msgid "When activated the contact card will link to an direct enquiry form"
 msgstr "Verweis auf Kontaktfomular aktivieren"
 
-#: ./../behaviors/contact.py:85
-msgid "When activated the view will attempt to display a content element instead of a contact card"
+#: ../behaviors/contact.py:85
+msgid ""
+"When activated the view will attempt to display a content element instead of "
+"a contact card"
 msgstr "Anzeige im Inhaltsbereich aktivieren"
 
-#: ./../inquiry/inquiryformdispatched.pt:17
+#: ../inquiry/inquiryformdispatched.pt:17
 msgid "Your inquiry has been sent successfully."
-msgstr ""
+msgstr "Ihre Anfrage wurde erfolgreich verschickt."
 
-#: ./../behaviors/contact.py:66
+#: ../inquiry/inquiryform.pt:94
+msgid "Your message"
+msgstr "Ihre Nachricht an uns"
+
+#: ../inquiry/inquiryformdispatched.pt:25
+msgid ""
+"Your message to ${contact/title} has been forwarded on ${timestamp/date} at "
+"${timestamp/time} o'clock."
+msgstr ""
+"Ihre Nachricht an ${contact/title} wurde am ${timestamp/date} um ${timestamp/"
+"time} Uhr zugestellt."
+
+#: ../behaviors/contact.py:66
 msgid "Zipcode"
 msgstr "Postleitzahl"

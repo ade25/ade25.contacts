@@ -22,7 +22,7 @@
         <div class="app-page-content"
           tal:define="contact view/contact_details;
                       timestamp view/processed_timestamp">
-          <p>Your message to ${contact/title} has been forwarded on
+          <p i18n:translate="">Your message to ${contact/title} has been forwarded on
             ${timestamp/date} at ${timestamp/time} o'clock.
           </p>
           <p i18n:translate="">

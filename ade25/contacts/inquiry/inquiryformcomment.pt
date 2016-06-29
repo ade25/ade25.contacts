@@ -5,7 +5,7 @@
     tal:attributes="class python:err_msg and 'app-form-group app-field-comment has-error' or 'app-form-group app-field-comment'">
 
     <label for="comment"
-      i18n:translate="">Ihre Nachricht an uns</label>
+      i18n:translate="">Your message</label>
 
     <textarea class="app-form-control"
       id="comment"

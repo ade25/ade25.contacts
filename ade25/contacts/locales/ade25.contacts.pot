@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-29 11:41+0000\n"
+"POT-Creation-Date: 2016-06-29 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,12 +37,12 @@ msgstr ""
 msgid "Adds image to contact cards"
 msgstr ""
 
-#: ./../behaviors/configure.zcml:35
-msgid "Assign contact cards via selection"
+#: ./../inquiry/inquiryform.pt:27
+msgid "All fields marked with <code>*</code> are required."
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:66
-msgid "Betreff"
+#: ./../behaviors/configure.zcml:35
+msgid "Assign contact cards via selection"
 msgstr ""
 
 #: ./../behaviors/contact.py:84
@@ -78,11 +78,8 @@ msgid "Department"
 msgstr ""
 
 #: ./../behaviors/contact.py:44
+#: ./../inquiry/inquiryform.pt:38
 msgid "E-Mail"
-msgstr ""
-
-#: ./../inquiry/inquiryform.pt:37
-msgid "E-Mail-Adresse"
 msgstr ""
 
 #: ./../behaviors/contact.py:34
@@ -93,12 +90,9 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
+#: ./../inquiry/inquiryform.pt:14
 #: ./../inquiry/inquiryformdispatched.pt:14
 msgid "Inquiry form"
-msgstr ""
-
-#: ./../inquiry/inquiryform.pt:93
-msgid "Jetzt senden"
 msgstr ""
 
 #: ./../contact.py:24
@@ -122,7 +116,16 @@ msgid "Related"
 msgstr ""
 
 #: ./../browser/contactcard.pt:56
+#: ./../browser/contactelement.pt:53
 msgid "Send message"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:67
+msgid "Subject"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:114
+msgid "Submit"
 msgstr ""
 
 #: ./../inquiry/inquiryformdispatched.pt:28
@@ -134,7 +137,7 @@ msgid "Thank you for your interest. Your message has been sent."
 msgstr ""
 
 #: ./../inquiry/inquiry.py:45
-#: ./../inquiry/inquiryform.pt:55
+#: ./../inquiry/inquiryform.pt:56
 msgid "This field is required"
 msgstr ""
 
@@ -152,6 +155,14 @@ msgstr ""
 
 #: ./../inquiry/inquiryformdispatched.pt:17
 msgid "Your inquiry has been sent successfully."
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:94
+msgid "Your message"
+msgstr ""
+
+#: ./../inquiry/inquiryformdispatched.pt:25
+msgid "Your message to ${contact/title} has been forwarded on ${timestamp/date} at ${timestamp/time} o'clock."
 msgstr ""
 
 #: ./../behaviors/contact.py:66
