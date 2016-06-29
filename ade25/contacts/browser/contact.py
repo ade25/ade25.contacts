@@ -46,6 +46,14 @@ class ContactView(BrowserView):
 class ContactCardView(BrowserView):
     """ Card view for contact objects """
 
+    def __call__(self, **kw):
+        self.params = {}
+        self.params.update(kw)
+        return self.render()
+
+    def render(self):
+        return self.index()
+
     def has_image(self):
         context = aq_inner(self.context)
         try:
