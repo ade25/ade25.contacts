@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing inquiry form processing"""
+import datetime
+import pytz
 from AccessControl import Unauthorized
 from Acquisition import aq_inner
 from Products.CMFPlone.utils import safe_unicode
@@ -85,7 +87,6 @@ class InquiryFormView(BrowserView):
         if self.subpath:
             contact_uid = self.subpath[0]
             contact_obj = api.content.get(UID=contact_uid)
-        subject = _(u"Inquiry from website visitor")
         subject_translated = translation_service.utranslate(
             u"Inquiry from website visitor",
             'ade25.contacts',
@@ -105,7 +106,10 @@ class InquiryFormView(BrowserView):
             recipients,
             subject_translated
         )
-        next_url = context.absolute_url()
+        next_url = '{0}/@@inquiry-form-dispatched/{1}'.format(
+            context.absolute_url(),
+            self.traverse_subpath[0]
+        )
         msg = _(u"Thank you for your interest. Your message has been sent.")
         api.portal.show_message(message=msg, request=self.request)
         return self.request.response.redirect(next_url)
@@ -122,6 +126,38 @@ class InquiryFormView(BrowserView):
         template_name = 'inquiry-mail.html'
         message = get_mail_template(template_name, template_vars)
         return message
+
+
+class InquiryFormDispatchedView(BrowserView):
+    """ Inquiry form dispatched
+
+        Show thank you page with feedback on how and when the request
+        was processed
+    """
+
+    @property
+    def traverse_subpath(self):
+        return self.subpath
+
+    def publishTraverse(self, request, name):
+        if not hasattr(self, 'subpath'):
+            self.subpath = []
+        self.subpath.append(name)
+        return self
+
+    def contact_details(self):
+        contact_uid = self.subpath[0]
+        contact_obj = api.content.get(UID=contact_uid)
+        return contact_obj
+
+    def processed_timestamp(self):
+        plone = getMultiAdapter((self.context, self.request), name="plone")
+        now = datetime.datetime.utcnow()
+        now = now.replace(tzinfo=pytz.utc)
+        return {
+            'date': plone.toLocalizedTime(now),
+            'time': plone.toLocalizedTime(now, time_only=True)
+        }
 
 
 class InquiryFormEmail(BrowserView):

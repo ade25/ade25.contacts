@@ -15,6 +15,16 @@
       layer="ade25.contacts.interfaces.IAde25ContactLayer"
       />
 
+  <!-- Inquiry form dispatched aka thank you page -->
+  <browser:page
+      for="Products.CMFCore.interfaces.IContentish"
+      name="inquiry-form-dispatched"
+      class=".inquiry.InquiryFormDispatchedView"
+      template="inquiryformdispatched.pt"
+      permission="zope2.View"
+      layer="ade25.contacts.interfaces.IAde25ContactLayer"
+      />
+
   <browser:page
       for="Products.CMFCore.interfaces.IContentish"
       name="inquiry-form-email"
