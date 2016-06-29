@@ -1,4 +1,5 @@
-<div class="app-card app-card-contact">
+<div class="app-card app-card-contact"
+     i18n:domain="ade25.contacts">
   <div class="app-card-header app-card-header-contact">
     <div class="app-card-title">
       ${context/Title}
@@ -54,7 +55,8 @@
       <div class="app-card-footer app-card-footer-contacts" tal:condition="context/enquiry">
           <a class="app-contact-email btn btn-primary app-btn-contact-card"
               tal:condition="context/email"
-              href="${view/get_inquiry_form_link}">Nachricht senden</a>
+              href="${view/get_inquiry_form_link}"
+              i18n:translate="">Send message</a>
       </div>
   </div>
 </div>
