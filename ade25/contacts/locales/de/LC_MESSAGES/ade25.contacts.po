@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2016-06-29 12:07+0000\n"
-"PO-Revision-Date: 2016-06-29 14:07+0200\n"
+"POT-Creation-Date: 2016-06-29 13:25+0000\n"
+"PO-Revision-Date: 2016-06-29 15:26+0200\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language-Code: de\n"
 "Language-Name: German\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ade25.contacts\n"
+"Language: de\n"
 "X-Generator: Poedit 1.8.8\n"
 
 #: ../behaviors/portrait.py:19
@@ -92,6 +92,10 @@ msgstr "Name"
 msgid "Inquiry form"
 msgstr "Anfrageformular"
 
+#: ../inquiry/inquiry.py:89
+msgid "Inquiry from website visitor"
+msgstr "Nachricht über das Web Anfrage Formular"
+
 #: ../contact.py:24
 msgid "Last name"
 msgstr "Nachname"
@@ -112,6 +116,10 @@ msgstr "Position"
 msgid "Related"
 msgstr "Verwandt"
 
+#: ../inquiry/inquiryformdispatched.pt:29
+msgid "Return to last visited page"
+msgstr "Zur zuletzt besuchten Seite zurückkehren"
+
 #: ../browser/contactcard.pt:56 ../browser/contactelement.pt:53
 msgid "Send message"
 msgstr "Nachricht senden"
@@ -124,17 +132,9 @@ msgstr "Betreff"
 msgid "Submit"
 msgstr "Abschicken"
 
-#: ../inquiry/inquiryformdispatched.pt:28
-msgid ""
-"Thank you for your interest. We will get in touch with you as soon as "
-"possible."
-msgstr ""
-"Vielen Dank für Ihr Interesse. Wir werden uns sobald wie möglich mit Ihrem "
-"Anliegen auseinandersetzen."
-
-#: ../inquiry/inquiry.py:113
-msgid "Thank you for your interest. Your message has been sent."
-msgstr "Vielen Dank für Ihr Interesse. Ihre Nachricht wurde versendet"
+#: ../inquiry/inquiryformdispatched.pt:25
+msgid "Thank you for your interest. We will get in touch with you as soon as possible."
+msgstr "Vielen Dank für Ihr Interesse. Wir werden uns sobald wie möglich mit Ihrem Anliegen auseinandersetzen."
 
 #: ../inquiry/inquiry.py:45 ../inquiry/inquiryform.pt:56
 msgid "This field is required"
@@ -149,9 +149,7 @@ msgid "When activated the contact card will link to an direct enquiry form"
 msgstr "Verweis auf Kontaktfomular aktivieren"
 
 #: ../behaviors/contact.py:85
-msgid ""
-"When activated the view will attempt to display a content element instead of "
-"a contact card"
+msgid "When activated the view will attempt to display a content element instead of a contact card"
 msgstr "Anzeige im Inhaltsbereich aktivieren"
 
 #: ../inquiry/inquiryformdispatched.pt:17
@@ -161,14 +159,6 @@ msgstr "Ihre Anfrage wurde erfolgreich verschickt."
 #: ../inquiry/inquiryform.pt:94
 msgid "Your message"
 msgstr "Ihre Nachricht an uns"
-
-#: ../inquiry/inquiryformdispatched.pt:25
-msgid ""
-"Your message to ${contact/title} has been forwarded on ${timestamp/date} at "
-"${timestamp/time} o'clock."
-msgstr ""
-"Ihre Nachricht an ${contact/title} wurde am ${timestamp/date} um ${timestamp/"
-"time} Uhr zugestellt."
 
 #: ../behaviors/contact.py:66
 msgid "Zipcode"

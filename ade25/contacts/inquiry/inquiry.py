@@ -82,17 +82,15 @@ class InquiryFormView(BrowserView):
         return value
 
     def send_inquiry(self, data):
-        translation_service = api.portal.get_tool(name="translation_service")
         context = aq_inner(self.context)
         if self.subpath:
             contact_uid = self.subpath[0]
             contact_obj = api.content.get(UID=contact_uid)
-        subject_translated = translation_service.utranslate(
-            u"Inquiry from website visitor",
+        subject = _(u"Inquiry from website visitor")
+        email_subject = api.portal.translate(
+            "Inquiry from website visitor",
             'ade25.contacts',
-            context=context,
-            target_language=api.portal.get_default_language()
-        )
+            api.portal.get_current_language())
         mail_tpl = self._compose_message(data)
         mail_plain = create_plaintext_message(mail_tpl)
         msg = prepare_email_message(mail_tpl, mail_plain)
@@ -104,7 +102,7 @@ class InquiryFormView(BrowserView):
         send_mail(
             msg,
             recipients,
-            subject_translated
+            email_subject
         )
         next_url = '{0}/@@inquiry-form-dispatched/{1}'.format(
             context.absolute_url(),
@@ -149,13 +147,13 @@ class InquiryFormDispatchedView(BrowserView):
         return contact_obj
 
     def processed_timestamp(self):
-        plone = getMultiAdapter((self.context, self.request), name="plone")
-        now = datetime.datetime.utcnow()
-        now = now.replace(tzinfo=pytz.utc)
-        return {
-            'date': plone.toLocalizedTime(now),
-            'time': plone.toLocalizedTime(now, time_only=True)
+        datetime_now = datetime.datetime.utcnow()
+        now = datetime_now.replace(tzinfo=pytz.utc)
+        timestamp_data = {
+            'date': api.portal.get_localized_time(now),
+            'time': api.portal.get_localized_time(now, time_only=True),
         }
+        return timestamp_data
 
 
 class InquiryFormEmail(BrowserView):

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-29 12:07+0000\n"
+"POT-Creation-Date: 2016-06-29 13:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,6 +95,10 @@ msgstr ""
 msgid "Inquiry form"
 msgstr ""
 
+#: ./../inquiry/inquiry.py:89
+msgid "Inquiry from website visitor"
+msgstr ""
+
 #: ./../contact.py:24
 msgid "Last name"
 msgstr ""
@@ -115,6 +119,10 @@ msgstr ""
 msgid "Related"
 msgstr ""
 
+#: ./../inquiry/inquiryformdispatched.pt:29
+msgid "Return to last visited page"
+msgstr ""
+
 #: ./../browser/contactcard.pt:56
 #: ./../browser/contactelement.pt:53
 msgid "Send message"
@@ -128,12 +136,8 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: ./../inquiry/inquiryformdispatched.pt:28
+#: ./../inquiry/inquiryformdispatched.pt:25
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
-msgstr ""
-
-#: ./../inquiry/inquiry.py:113
-msgid "Thank you for your interest. Your message has been sent."
 msgstr ""
 
 #: ./../inquiry/inquiry.py:45
@@ -159,10 +163,6 @@ msgstr ""
 
 #: ./../inquiry/inquiryform.pt:94
 msgid "Your message"
-msgstr ""
-
-#: ./../inquiry/inquiryformdispatched.pt:25
-msgid "Your message to ${contact/title} has been forwarded on ${timestamp/date} at ${timestamp/time} o'clock."
 msgstr ""
 
 #: ./../behaviors/contact.py:66

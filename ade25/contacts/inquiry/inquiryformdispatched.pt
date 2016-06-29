@@ -22,14 +22,11 @@
         <div class="app-page-content"
           tal:define="contact view/contact_details;
                       timestamp view/processed_timestamp">
-          <p i18n:translate="">Your message to ${contact/title} has been forwarded on
-            ${timestamp/date} at ${timestamp/time} o'clock.
-          </p>
           <p i18n:translate="">
-            Thank you for your interest. We will get in touch with you as
-            soon as possible.
+            Thank you for your interest. We will get in touch with you as soon as possible.
           </p>
           <p><strong tal:content="context/@@plone_portal_state/portal_title" /></p>
+          <p><a class="btn btn-secondary" href="${context/absolute_url}" i18n:translate="">Return to last visited page</a></p>
         </div>
     </div>
   </metal:content-core>
