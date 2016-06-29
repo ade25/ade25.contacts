@@ -54,7 +54,9 @@
       <div class="app-card-footer app-card-footer-contacts" tal:condition="context/enquiry">
           <a class="app-contact-email btn btn-primary app-btn-contact-card"
               tal:condition="context/email"
-              href="${context/absolute_url}/@@inquiry-form">Nachricht senden</a>
+              href="${context/absolute_url}/@@inquiry-form"
+              i18n:translate="">Send message
+          </a>
       </div>
   </div>
 </div>
