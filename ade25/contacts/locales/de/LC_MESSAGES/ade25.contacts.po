@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: 2016-06-29 13:25+0000\n"
-"PO-Revision-Date: 2016-06-29 15:26+0200\n"
+"PO-Revision-Date: 2016-07-27 12:08+0200\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Abteilung"
 
 #: ../behaviors/contact.py:44 ../inquiry/inquiryform.pt:38
 msgid "E-Mail"
-msgstr "E-Mail-Adresse"
+msgstr "Ihre E-Mail-Adresse"
 
 #: ../behaviors/contact.py:34
 msgid "Fax"
