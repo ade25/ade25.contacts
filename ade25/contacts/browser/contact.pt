@@ -32,9 +32,9 @@
             ${context/zipcode} ${context/city}
           </address>
           <address>
-            <i class="fa fa-phone"></i> ${context/phone}<br>
-            <i class="fa fa-fax"></i> ${context/fax}<br>
-            <i class="fa fa-envelope-o"></i> <a href="mailto:${context/email}">${context/email}</a>
+              <div class="app-contact-phone" tal:condition="context/phone">${context/phone}</div>
+              <div class="app-contact-fax" tal:condition="context/fax">${context/fax}</div>
+              <div class="app-contact-email" tal:condition="context/email"><a href="mailto:${context/email}">${context/email}</a></div>
           </address>
         </div>
         <div class="app-content-aside">
