@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing ContentPage content type functionality"""
-
 from plone.dexterity.content import Container
-from plone.directives import form
+from plone.supermodel import model
 from plone.namedfile.interfaces import IImageScaleTraversable
 from zope.interface import implementer
 from zope import schema
@@ -10,7 +9,7 @@ from zope import schema
 from ade25.contacts import _
 
 
-class IContact(form.Schema, IImageScaleTraversable):
+class IContact(model.Schema, IImageScaleTraversable):
     """
     A folderish page
     """
