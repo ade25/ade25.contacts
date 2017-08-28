@@ -41,8 +41,8 @@
       <div class="app-card-content app-card-content-default">
         <address class="app-contact-block" tal:condition="view/has_address_info">
           ${context/address}<br>
-          ${context/address_extra}<br>
-          ${context/zipcode} ${context/city}
+          ${context/zipcode} ${context/city}<br>
+          ${context/address_extra}
         </address>
         <div class="app-contact-block app-contact-position" tal:condition="view/has_position_info">
           ${context/position}<br>
