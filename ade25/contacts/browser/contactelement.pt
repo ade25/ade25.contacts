@@ -35,7 +35,8 @@
       </div>
       <address class="app-contanct-element-block" tal:condition="view/has_address_info">
         ${context/address}<br>
-        ${context/zipcode} ${context/city}
+        ${context/address_extra}<br>
+        ${context/zipcode} ${context/city} 
       </address>
       <div class="app-contact-element-block app-contact-position" tal:condition="view/has_position_info">
         ${context/position}<br>
