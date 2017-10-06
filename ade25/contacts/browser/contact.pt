@@ -29,8 +29,10 @@
           </div>
           <address tal:condition="view/has_address_info">
             ${context/address}<br>
-            ${context/zipcode} ${context/city}<br>
-            ${context/address_extra}
+            ${context/zipcode} ${context/city}
+                <tal:extra tal:condition="python:context.address_extra">
+                    <br>${context/address_extra}
+                </tal:extra>
           </address>
           <address>
               <div class="app-contact-phone" tal:condition="context/phone">${context/phone}</div>
