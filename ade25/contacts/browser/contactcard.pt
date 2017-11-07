@@ -12,30 +12,10 @@
       </div>
       <div class="app-card-content-media">
         <tal:image tal:condition="view/has_image">
-          <figure class="app-page-image-container"
-              tal:define="item_uuid context/UID;
-                          image_data python:view.get_image_data(item_uuid)">
-              <div class="img-fluid">
-                <img class="lazyload"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    data-sizes="auto"
-                    data-src="${image_data/large}"
-                    data-srcset="${image_data/small},
-                                 ${image_data/medium},
-                                 ${image_data/large},
-                                 ${image_data/original}" />
-              </div>
-              <noscript>
-                <!-- Provide fallback for missing lazyload javascript -->
-                <img tal:define="has_img context/image|nothing;
-                                 scales context/@@images|nothing"
-                    tal:condition="python:has_img and scales"
-                    tal:replace="structure python: scales.scale('image', scale='mini').tag(css_class='newsImage')" />
-              </noscript>
-            <figcaption tal:condition="exists:context/image_caption">
-              ${context/image_caption}
-            </figcaption>
-          </figure>
+            <div class="app-card__figure"
+                     tal:define="responsive_image python:context.restrictedTraverse('@@figure')(image_field_name='image', caption_field_name='image_caption', scale='default', lqip=True, lazy_load=True)">
+                    <span tal:replace="structure responsive_image" />
+            </div>
         </tal:image>
       </div>
       <div class="app-card-content app-card-content-default">
