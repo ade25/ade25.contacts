@@ -33,7 +33,6 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'ade25.base',
         'plone.app.dexterity',
     ],
     extras_require={
