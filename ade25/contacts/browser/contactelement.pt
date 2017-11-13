@@ -31,7 +31,7 @@
       <div class="app-contact-actions" tal:condition="context/url">
         <a class="app-contact-link btn btn-primary"
             href="${context/url}"
-            i18n:translate="">Website</a>
+            i18n:translate="">Visit website</a>
       </div>
       <div class="app-contact-actions" tal:condition="context/enquiry">
         <a class="app-contact-email btn btn-primary"
