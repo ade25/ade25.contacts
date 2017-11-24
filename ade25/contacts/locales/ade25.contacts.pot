@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-29 13:25+0000\n"
+"POT-Creation-Date: 2017-11-13 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Fax"
 msgstr ""
 
-#: ./../contact.py:19
+#: ./../contact.py:18
 msgid "First name"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Inquiry from website visitor"
 msgstr ""
 
-#: ./../contact.py:24
+#: ./../contact.py:23
 msgid "Last name"
 msgstr ""
 
@@ -123,8 +123,8 @@ msgstr ""
 msgid "Return to last visited page"
 msgstr ""
 
-#: ./../browser/contactcard.pt:56
-#: ./../browser/contactelement.pt:53
+#: ./../browser/contactcard.pt:39
+#: ./../browser/contactelement.pt:37
 msgid "Send message"
 msgstr ""
 
@@ -147,6 +147,10 @@ msgstr ""
 
 #: ./../behaviors/contact.py:39
 msgid "URL"
+msgstr ""
+
+#: ./../browser/contactelement.pt:32
+msgid "Visit website"
 msgstr ""
 
 #: ./../behaviors/contact.py:50
