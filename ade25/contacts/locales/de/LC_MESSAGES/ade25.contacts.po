@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2016-06-29 13:25+0000\n"
-"PO-Revision-Date: 2016-07-27 12:08+0200\n"
+"POT-Creation-Date: 2017-11-13 10:16+0000\n"
+"PO-Revision-Date: 2017-11-13 11:16+0100\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ade25.contacts\n"
 "Language: de\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../behaviors/portrait.py:19
 msgid "Add portrait image for contact card"
@@ -84,7 +84,7 @@ msgstr "Ihre E-Mail-Adresse"
 msgid "Fax"
 msgstr "Fax"
 
-#: ../contact.py:19
+#: ../contact.py:18
 msgid "First name"
 msgstr "Name"
 
@@ -96,7 +96,7 @@ msgstr "Anfrageformular"
 msgid "Inquiry from website visitor"
 msgstr "Nachricht über das Web Anfrage Formular"
 
-#: ../contact.py:24
+#: ../contact.py:23
 msgid "Last name"
 msgstr "Nachname"
 
@@ -120,7 +120,7 @@ msgstr "Verwandt"
 msgid "Return to last visited page"
 msgstr "Zur zuletzt besuchten Seite zurückkehren"
 
-#: ../browser/contactcard.pt:56 ../browser/contactelement.pt:53
+#: ../browser/contactcard.pt:39 ../browser/contactelement.pt:37
 msgid "Send message"
 msgstr "Nachricht senden"
 
@@ -143,6 +143,10 @@ msgstr "Dies ist ein Pflichtfeld"
 #: ../behaviors/contact.py:39
 msgid "URL"
 msgstr "URL"
+
+#: ../browser/contactelement.pt:32
+msgid "Visit website"
+msgstr "Webseite besuchen"
 
 #: ../behaviors/contact.py:50
 msgid "When activated the contact card will link to an direct enquiry form"

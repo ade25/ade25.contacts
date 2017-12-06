@@ -29,8 +29,9 @@
           <div class="app-contact-fax" tal:condition="context/fax"> ${context/fax}</div>
       </address>
       <div class="app-contact-actions" tal:condition="context/url">
-        <a class="app-contact-link"
-            href="${context/url}">${context/url}</a>
+        <a class="app-contact-link btn btn-primary"
+            href="${context/url}"
+            i18n:translate="">Visit website</a>
       </div>
       <div class="app-contact-actions" tal:condition="context/enquiry">
         <a class="app-contact-email btn btn-primary"
