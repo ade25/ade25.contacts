@@ -107,56 +107,55 @@
 
               </div><!-- /message field -->
 
-                <div class="form__group app-form-group app-field-privacy-policy"
-                         tal:define="error errors/privacy | nothing;
-                        err_msg python:error and error['active'] == True;
-                        value request/comment | nothing"
-                         tal:attributes="class python:err_msg and 'form__group form__group--checkboxes app-form-group app-field-privacy-policy app-field-required has-error' or 'form__group  form__group--checkboxes app-form-group app-field-privacy-policy app-field-required'">
+              <tal:privacy tal:condition="view/privacy_policy_enabled">
+                  <div class="form__group app-form-group app-field-privacy-policy"
+                           tal:define="error errors/privacy-policy | nothing;
+                          err_msg python:error and error['active'] == True;
+                          value request/comment | nothing"
+                           tal:attributes="class python:err_msg and 'form__group form__group--checkboxes app-form-group app-field-privacy-policy app-field-required has-error' or 'form__group  form__group--checkboxes app-form-group app-field-privacy-policy app-field-required'">
 
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="app-form-control custom-control-input" id="privacy-policy" name="privacy-policy">
-                        <label class="custom-control-label" for="privacy-policy" i18n:translate="">
-                            By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry.
-                        </label>
-                    </div>
+                          <input type="checkbox" class="form__control form__control--checkbox" id="privacy-policy" name="privacy-policy">
+                          <label class="form__label" for="privacy-policy" i18n:translate="">
+                              By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry.
+                          </label>
 
-                    <div class="required-icon">
-                        <div class="text">*</div>
-                    </div>
+                      <div class="required-icon">
+                          <div class="text">*</div>
+                      </div>
 
-                    <div class="help-block error"
-                             tal:condition="err_msg">
-                        <i class="fa fa-exclamation-triangle"></i>
-                        <span tal:replace="python:error['msg']" />
-                    </div>
+                      <div class="help-block error"
+                               tal:condition="err_msg">
+                          <i class="fa fa-exclamation-triangle"></i>
+                          <span tal:replace="python:error['msg']" />
+                      </div>
 
-                </div><!-- /privacy notice field -->
+                  </div><!-- /privacy notice field -->
 
-                <div class="form__group app-form-group app-field-privacy-agreement"
-                         tal:define="error errors/privacy | nothing;
-                        err_msg python:error and error['active'] == True;
-                        value request/comment | nothing"
-                         tal:attributes="class python:err_msg and 'form__group form__group--checkboxes  app-form-group app-field-privacy-agreement app-field-required has-error' or 'form__group form__group--checkboxes app-form-group app-field-privacy-agreement app-field-required'">
+                  <div class="form__group app-form-group app-field-privacy-agreement"
+                           tal:define="error errors/privacy | nothing;
+                          err_msg python:error and error['active'] == True;
+                          value request/comment | nothing"
+                           tal:attributes="class python:err_msg and 'form__group form__group--checkboxes  app-form-group app-field-privacy-agreement app-field-required has-error' or 'form__group form__group--checkboxes app-form-group app-field-privacy-agreement app-field-required'">
 
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="app-form-control custom-control-input" id="privacy-policy-agreement" name="privacy-policy-agreement">
-                        <label class="custom-control-label" for="privacy-policy-agreement" i18n:translate="">
-                            I have acknowledged the
-                            <a href="${view/privacy_policy_url}">privacy policy</a>
-                            and accept it.
-                        </label>
-                        <div class="required-icon">
-                            <div class="text">*</div>
-                        </div>
-                    </div>
+                      <input type="checkbox" class="form__control form__control--checkbox" id="privacy-policy-agreement" name="privacy-policy-agreement">
+                      <label class="form__label" for="privacy-policy-agreement">
+                          <span i18n:translate="" tal:omit-tag="">I have acknowledged the</span>
+                          <a href="${view/privacy_policy_url}" i18n:translate="">privacy policy</a>
+                          <span i18n:translate="" tal:omit-tag="">and accept it.</span>
+                      </label>
+                      <div class="required-icon">
+                          <div class="text">*</div>
+                      </div>
 
-                    <div class="help-block error"
-                             tal:condition="err_msg">
-                        <i class="fa fa-exclamation-triangle"></i>
-                        <span tal:replace="python:error['msg']" />
-                    </div>
+                      <div class="help-block error"
+                               tal:condition="err_msg">
+                          <i class="fa fa-exclamation-triangle"></i>
+                          <span tal:replace="python:error['msg']" />
+                      </div>
 
-                </div><!-- /privacy policy agreement field -->
+                  </div><!-- /privacy policy agreement field -->
+
+              </tal:privacy>
 
             </div>
 

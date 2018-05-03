@@ -28,6 +28,8 @@ class InquiryFormView(BrowserView):
         translation_service = api.portal.get_tool(name="translation_service")
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ('email', 'subject')
+        if self.privacy_policy_enabled():
+            required = required + ('privacy', 'privacy')
         if 'form.button.Submit' in self.request:
             authenticator = getMultiAdapter((self.context, self.request),
                                             name=u"authenticator")
@@ -81,11 +83,27 @@ class InquiryFormView(BrowserView):
             value = error['msg']
         return value
 
-    def privacy_policy_url(self):
-        portal = api.portal.get()
-        portal_url = portal.absolute_url()
-        url = '{0}/datenschutzbestimmung'.format(portal_url)
-        return url
+    @staticmethod
+    def privacy_policy_enabled():
+        enabled = api.portal.get_registry_record(
+            name='ade25.contacts.display_privacy_policy'
+        )
+        if enabled:
+            return enabled
+        return False
+
+    @staticmethod
+    def privacy_policy_url():
+        url = api.portal.get_registry_record(
+            name='ade25.contacts.privacy_policy_url'
+        )
+        if url:
+            return url
+        else:
+            portal = api.portal.get()
+            portal_url = portal.absolute_url()
+            url = '{0}/datenschutzbestimmung'.format(portal_url)
+            return url
 
     def send_inquiry(self, data):
         context = aq_inner(self.context)

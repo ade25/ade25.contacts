@@ -3,12 +3,12 @@
 
     <configlet
             title="Ade25 Contact Settings"
-            action_id="ade25-contact-controlpanel"
-            appId="ade25-contact-controlpanel"
+            action_id="ade25-contacts-controlpanel"
+            appId="ade25-contacts-controlpanel"
             category="Products"
             condition_expr=""
             icon_expr=""
-            url_expr="string:${portal_url}/@@ade25-contact-controlpanel"
+            url_expr="string:${portal_url}/@@ade25-contacts-controlpanel"
             visible="True">
         <permission>Manage portal</permission>
     </configlet>

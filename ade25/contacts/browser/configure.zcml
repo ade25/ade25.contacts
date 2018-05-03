@@ -41,5 +41,13 @@
       permission="zope2.View"
       />
 
+  <browser:page
+          name="ade25-contacts-controlpanel"
+          for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+          class=".controlpanel.Ade25ContactsSettings"
+          permission="cmf.ManagePortal"
+          template="settings.pt"
+  />
+
 
 </configure>

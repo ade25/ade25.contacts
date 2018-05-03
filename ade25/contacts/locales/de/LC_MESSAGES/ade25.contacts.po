@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2018-05-03 13:50+0000\n"
-"PO-Revision-Date: 2018-05-03 15:52+0200\n"
+"POT-Creation-Date: 2018-05-03 15:47+0000\n"
+"PO-Revision-Date: 2018-05-03 17:56+0200\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,10 @@ msgstr "Fügt Kontakt- und Adressfelder hinzu"
 #: ../behaviors/configure.zcml:26
 msgid "Adds image to contact cards"
 msgstr "Fügt Bildupload zu Kontakmodul hinzu"
+
+#: ../browser/settings.pt:19
+msgid "Ade25 Contacts Settings"
+msgstr "Ade25 Contacts Einstellungen"
 
 #: ../inquiry/inquiryform.pt:27
 msgid "All fields marked with <code>*</code> are required."
@@ -84,6 +88,14 @@ msgstr "Abteilung"
 msgid "E-Mail"
 msgstr "Ihre E-Mail-Adresse"
 
+#: ../browser/controlpanel.py:16
+msgid "Enable Privacy Policy fields"
+msgstr "Felder mit Datenschutzhinweisen aktivieren"
+
+#: ../browser/controlpanel.py:25
+msgid "Enter relative location of privacy and data protection notice page"
+msgstr "Geben Sie hier den relativen Pfad zu den Datenschutzhinweisen ein"
+
 #: ../behaviors/contact.py:34
 msgid "Fax"
 msgstr "Fax"
@@ -92,15 +104,15 @@ msgstr "Fax"
 msgid "First name"
 msgstr "Name"
 
-#: ../inquiry/inquiryform.pt:143
-msgid "I have acknowledged the <a href=\"${view/privacy_policy_url}\">privacy policy</a> and accept it."
-msgstr "Ich habe die <a href=„${view/privacy_policy_url}“>Datenschutzhinweise</a> zur Kenntnis genommen und akzeptiere diese."
+#: ../inquiry/inquiryform.pt:142
+msgid "I have acknowledged the"
+msgstr "Ich habe die "
 
 #: ../inquiry/inquiryform.pt:14 ../inquiry/inquiryformdispatched.pt:14
 msgid "Inquiry form"
 msgstr "Anfrageformular"
 
-#: ../inquiry/inquiry.py:95
+#: ../inquiry/inquiry.py:113
 msgid "Inquiry from website visitor"
 msgstr "Nachricht über das Web Anfrage Formular"
 
@@ -120,6 +132,10 @@ msgstr "Porträt"
 msgid "Position"
 msgstr "Position"
 
+#: ../browser/controlpanel.py:24
+msgid "Privacy Policy Location"
+msgstr "URL der Bestimmungen und Belehrungen zum Datenschutz"
+
 #: ../behaviors/contactassignment.py:34
 msgid "Related"
 msgstr "Verwandt"
@@ -127,6 +143,10 @@ msgstr "Verwandt"
 #: ../inquiry/inquiryformdispatched.pt:29
 msgid "Return to last visited page"
 msgstr "Zur zuletzt besuchten Seite zurückkehren"
+
+#: ../browser/controlpanel.py:17
+msgid "Select if a privacy notice and policy agreement checkbox should be added to inquiry forms."
+msgstr "Setzen Sie einen Haken, wenn eine Checkbox zur Datenverarbeitung und zur Akzeptanz der Datenschutzbestimmungen angezeigt werden soll."
 
 #: ../browser/contactcard.pt:39 ../browser/contactelement.pt:37
 msgid "Send message"
@@ -136,7 +156,7 @@ msgstr "Nachricht senden"
 msgid "Subject"
 msgstr "Betreff"
 
-#: ../inquiry/inquiryform.pt:166
+#: ../inquiry/inquiryform.pt:165
 msgid "Submit"
 msgstr "Abschicken"
 
@@ -144,7 +164,7 @@ msgstr "Abschicken"
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
 msgstr "Vielen Dank für Ihr Interesse. Wir werden uns sobald wie möglich mit Ihrem Anliegen auseinandersetzen."
 
-#: ../inquiry/inquiry.py:45 ../inquiry/inquiryform.pt:56
+#: ../inquiry/inquiry.py:47 ../inquiry/inquiryform.pt:56
 msgid "This field is required"
 msgstr "Dies ist ein Pflichtfeld"
 
@@ -175,3 +195,16 @@ msgstr "Ihre Nachricht an uns"
 #: ../behaviors/contact.py:66
 msgid "Zipcode"
 msgstr "Postleitzahl"
+
+#: ../inquiry/inquiryform.pt:144
+msgid "and accept it."
+msgstr "zur Kenntnis genommen und akzeptiere diese."
+
+#. Default: "Up to Site Setup"
+#: ../browser/settings.pt:25
+msgid "label_up_to_plone_setup"
+msgstr "Zur Seitenkonfiguration"
+
+#: ../inquiry/inquiryform.pt:143
+msgid "privacy policy"
+msgstr "Datenschutzbestimmungen"
