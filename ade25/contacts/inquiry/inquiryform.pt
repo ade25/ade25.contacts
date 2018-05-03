@@ -29,11 +29,11 @@
             </p>
 
             <div class="app-form-fieldset">
-              <div class="app-form-group app-field-email"
+              <div class="form__group app-form-group app-field-email"
                   tal:define="error errors/email | nothing;
                               err_msg python:error and error['active'] == True;
                               value request/email | nothing"
-                  tal:attributes="class python:err_msg and 'app-form-group app-field-email app-field-required has-error' or 'app-form-group app-field-email app-field-required'">
+                  tal:attributes="class python:err_msg and 'form__group app-form-group app-field-email app-field-required has-error' or 'form__group app-form-group app-field-email app-field-required'">
 
                   <label class="xsr-only"
                     for="email"
@@ -58,11 +58,11 @@
 
               </div><!-- /email field -->
 
-              <div class="app-form-group app-field-subject"
+              <div class="form__group app-form-group app-field-subject"
                 tal:define="error errors/subject | nothing;
                             err_msg python:error and error['active'] == True;
                             value request/subject | nothing"
-                tal:attributes="class python:err_msg and 'app-form-group app-field-subject app-field-required has-error' or 'app-form-group app-field-subject app-field-required'">
+                tal:attributes="class python:err_msg and 'form__group app-form-group app-field-subject app-field-required has-error' or 'form__group app-form-group app-field-subject app-field-required'">
 
                 <label for="subject"
                   i18n:translate="">Subject</label>
@@ -85,11 +85,11 @@
 
               </div><!-- /subject field -->
 
-              <div class="app-form-group app-field-comment"
+              <div class="form__group app-form-group app-field-comment"
                   tal:define="error errors/comment | nothing;
                               err_msg python:error and error['active'] == True;
                               value request/comment | nothing"
-                  tal:attributes="class python:err_msg and 'app-form-group app-field-comment has-error' or 'app-form-group app-field-comment'">
+                  tal:attributes="class python:err_msg and 'form__group app-form-group app-field-comment has-error' or 'form__group app-form-group app-field-comment'">
 
                   <label for="comment"
                     i18n:translate="">Your message</label>
@@ -107,17 +107,21 @@
 
               </div><!-- /message field -->
 
-                <div class="app-form-group app-field-privacy-policy"
+                <div class="form__group app-form-group app-field-privacy-policy"
                          tal:define="error errors/privacy | nothing;
                         err_msg python:error and error['active'] == True;
                         value request/comment | nothing"
-                         tal:attributes="class python:err_msg and 'app-form-group app-field-privacy-policy has-error' or 'app-form-group app-field-privacy-policy'">
+                         tal:attributes="class python:err_msg and 'form__group form__group--checkboxes app-form-group app-field-privacy-policy app-field-required has-error' or 'form__group  form__group--checkboxes app-form-group app-field-privacy-policy app-field-required'">
 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="app-form-control custom-control-input" id="privacy-policy" name="privacy-policy">
                         <label class="custom-control-label" for="privacy-policy" i18n:translate="">
                             By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry.
                         </label>
+                    </div>
+
+                    <div class="required-icon">
+                        <div class="text">*</div>
                     </div>
 
                     <div class="help-block error"
@@ -128,11 +132,11 @@
 
                 </div><!-- /privacy notice field -->
 
-                <div class="app-form-group app-field-privacy-agreement"
+                <div class="form__group app-form-group app-field-privacy-agreement"
                          tal:define="error errors/privacy | nothing;
                         err_msg python:error and error['active'] == True;
                         value request/comment | nothing"
-                         tal:attributes="class python:err_msg and 'app-form-group app-field-privacy-agreement has-error' or 'app-form-group app-field-privacy-agreement'">
+                         tal:attributes="class python:err_msg and 'form__group form__group--checkboxes  app-form-group app-field-privacy-agreement app-field-required has-error' or 'form__group form__group--checkboxes app-form-group app-field-privacy-agreement app-field-required'">
 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="app-form-control custom-control-input" id="privacy-policy-agreement" name="privacy-policy-agreement">
@@ -141,6 +145,9 @@
                             <a href="${view/privacy_policy_url}">privacy policy</a>
                             and accept it.
                         </label>
+                        <div class="required-icon">
+                            <div class="text">*</div>
+                        </div>
                     </div>
 
                     <div class="help-block error"
@@ -154,7 +161,7 @@
             </div>
 
             <!-- Form actions -->
-            <div class="app-form-group app-form-actions">
+            <div class="form__actions app-form-group app-form-actions">
                 <span tal:replace="structure context/@@authenticator/authenticator"/>
                 <button class="btn btn-primary btn-lg"
                     name="form.button.Submit"

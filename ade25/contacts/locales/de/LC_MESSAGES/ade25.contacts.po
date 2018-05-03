@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2017-11-13 10:16+0000\n"
-"PO-Revision-Date: 2017-11-13 11:16+0100\n"
+"POT-Creation-Date: 2018-05-03 13:50+0000\n"
+"PO-Revision-Date: 2018-05-03 15:52+0200\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ade25.contacts\n"
 "Language: de\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.7\n"
 
 #: ../behaviors/portrait.py:19
 msgid "Add portrait image for contact card"
@@ -43,6 +43,10 @@ msgstr "Alle Felder markiert mit <code>*</code> sind Pflichtfelder."
 #: ../behaviors/configure.zcml:35
 msgid "Assign contact cards via selection"
 msgstr "Kontaktmodulzuweisung via Auswahl"
+
+#: ../inquiry/inquiryform.pt:118
+msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
+msgstr "Mit Versenden der Nachricht bestätige ich die Richtigkeit meiner angegebenen Daten und willige einer Erhebung und weitergehenden Verarbeitung ein. Diese Daten werden nur zu dem von Ihnen angegebenen Anlass genutzt."
 
 #: ../behaviors/contact.py:84
 msgid "Check to enable content element display"
@@ -88,11 +92,15 @@ msgstr "Fax"
 msgid "First name"
 msgstr "Name"
 
+#: ../inquiry/inquiryform.pt:143
+msgid "I have acknowledged the <a href=\"${view/privacy_policy_url}\">privacy policy</a> and accept it."
+msgstr "Ich habe die <a href=„${view/privacy_policy_url}“>Datenschutzhinweise</a> zur Kenntnis genommen und akzeptiere diese."
+
 #: ../inquiry/inquiryform.pt:14 ../inquiry/inquiryformdispatched.pt:14
 msgid "Inquiry form"
 msgstr "Anfrageformular"
 
-#: ../inquiry/inquiry.py:89
+#: ../inquiry/inquiry.py:95
 msgid "Inquiry from website visitor"
 msgstr "Nachricht über das Web Anfrage Formular"
 
@@ -128,7 +136,7 @@ msgstr "Nachricht senden"
 msgid "Subject"
 msgstr "Betreff"
 
-#: ../inquiry/inquiryform.pt:114
+#: ../inquiry/inquiryform.pt:166
 msgid "Submit"
 msgstr "Abschicken"
 

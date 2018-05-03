@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-13 10:16+0000\n"
+"POT-Creation-Date: 2018-05-03 13:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,10 @@ msgstr ""
 
 #: ./../behaviors/configure.zcml:35
 msgid "Assign contact cards via selection"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:118
+msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
 msgstr ""
 
 #: ./../behaviors/contact.py:84
@@ -90,12 +94,16 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
+#: ./../inquiry/inquiryform.pt:143
+msgid "I have acknowledged the <a href=\"${view/privacy_policy_url}\">privacy policy</a> and accept it."
+msgstr ""
+
 #: ./../inquiry/inquiryform.pt:14
 #: ./../inquiry/inquiryformdispatched.pt:14
 msgid "Inquiry form"
 msgstr ""
 
-#: ./../inquiry/inquiry.py:89
+#: ./../inquiry/inquiry.py:95
 msgid "Inquiry from website visitor"
 msgstr ""
 
@@ -132,7 +140,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:114
+#: ./../inquiry/inquiryform.pt:166
 msgid "Submit"
 msgstr ""
 
