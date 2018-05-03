@@ -106,6 +106,51 @@
                   </div>
 
               </div><!-- /message field -->
+
+                <div class="app-form-group app-field-privacy-policy"
+                         tal:define="error errors/privacy | nothing;
+                        err_msg python:error and error['active'] == True;
+                        value request/comment | nothing"
+                         tal:attributes="class python:err_msg and 'app-form-group app-field-privacy-policy has-error' or 'app-form-group app-field-privacy-policy'">
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="app-form-control custom-control-input" id="privacy-policy" name="privacy-policy">
+                        <label class="custom-control-label" for="privacy-policy" i18n:translate="">
+                            By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry.
+                        </label>
+                    </div>
+
+                    <div class="help-block error"
+                             tal:condition="err_msg">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <span tal:replace="python:error['msg']" />
+                    </div>
+
+                </div><!-- /privacy notice field -->
+
+                <div class="app-form-group app-field-privacy-agreement"
+                         tal:define="error errors/privacy | nothing;
+                        err_msg python:error and error['active'] == True;
+                        value request/comment | nothing"
+                         tal:attributes="class python:err_msg and 'app-form-group app-field-privacy-agreement has-error' or 'app-form-group app-field-privacy-agreement'">
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="app-form-control custom-control-input" id="privacy-policy-agreement" name="privacy-policy-agreement">
+                        <label class="custom-control-label" for="privacy-policy-agreement" i18n:translate="">
+                            I have acknowledged the
+                            <a href="${view/privacy_policy_url}">privacy policy</a>
+                            and accept it.
+                        </label>
+                    </div>
+
+                    <div class="help-block error"
+                             tal:condition="err_msg">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <span tal:replace="python:error['msg']" />
+                    </div>
+
+                </div><!-- /privacy policy agreement field -->
+
             </div>
 
             <!-- Form actions -->

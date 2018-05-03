@@ -81,6 +81,12 @@ class InquiryFormView(BrowserView):
             value = error['msg']
         return value
 
+    def privacy_policy_url(self):
+        portal = api.portal.get()
+        portal_url = portal.absolute_url()
+        url = '{0}/datenschutzbestimmung'.format(portal_url)
+        return url
+
     def send_inquiry(self, data):
         context = aq_inner(self.context)
         if self.subpath:
