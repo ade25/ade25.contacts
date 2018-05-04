@@ -20,14 +20,19 @@ from ade25.contacts import _
 class InquiryFormView(BrowserView):
     """ Inquiry form """
 
+    # def __init__(self, context, request):
+    #     self.context = context
+    #     self.request = request
+    #     self.errors = dict()
+
     def __call__(self):
-        self.errors = {}
         return self.render()
 
     def update(self):
-        translation_service = api.portal.get_tool(name="translation_service")
+        self.errors = dict()
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ('email', 'subject')
+        required_boolean = ('privacy-policy-agreement', 'privacy-policy')
         if 'form.button.Submit' in self.request:
             authenticator = getMultiAdapter((self.context, self.request),
                                             name=u"authenticator")
@@ -36,27 +41,25 @@ class InquiryFormView(BrowserView):
             form = self.request.form
             form_data = {}
             form_errors = {}
-            errorIdx = 0
+            error_idx = 0
+            if self.privacy_policy_enabled():
+                for field_name in required_boolean:
+                    if not field_name in form:
+                        form_errors[field_name] = self.required_field_error()
+                        error_idx += 1
             for value in form:
                 if value not in unwanted:
                     form_data[value] = safe_unicode(form[value])
                     if not form[value] and value in required:
-                        error = {}
-                        error_msg = _(u"This field is required")
-                        error['active'] = True
-                        error['msg'] = translation_service.translate(
-                            error_msg,
-                            'ade25.contacts',
-                            target_language=api.portal.get_default_language()
-                        )
-                        form_errors[value] = error
-                        errorIdx += 1
+                        form_errors[value] = self.required_field_error()
+                        error_idx += 1
                     else:
-                        error = {}
-                        error['active'] = False
-                        error['msg'] = form[value]
+                        error = {
+                            'active': False,
+                            'msg': form[value]
+                        }
                         form_errors[value] = error
-            if errorIdx > 0:
+            if error_idx > 0:
                 self.errors = form_errors
             else:
                 self.send_inquiry(form)
@@ -80,6 +83,42 @@ class InquiryFormView(BrowserView):
         if error['active'] is False:
             value = error['msg']
         return value
+
+    @staticmethod
+    def required_field_error():
+        translation_service = api.portal.get_tool(name="translation_service")
+        error = {}
+        error_msg = _(u"This field is required")
+        error['active'] = True
+        error['msg'] = translation_service.translate(
+            error_msg,
+            'ade25.contacts',
+            target_language=api.portal.get_default_language()
+        )
+        return error
+
+    @staticmethod
+    def privacy_policy_enabled():
+        enabled = api.portal.get_registry_record(
+            name='ade25.contacts.display_privacy_policy'
+        )
+        if enabled:
+            return enabled
+        return False
+
+    @staticmethod
+    def privacy_policy_url():
+        portal = api.portal.get()
+        portal_url = portal.absolute_url()
+        policy_url = api.portal.get_registry_record(
+            name='ade25.contacts.privacy_policy_url'
+        )
+        if policy_url:
+            url = '{0}{1}'.format(portal_url, policy_url)
+            return url
+        else:
+            url = '{0}/datenschutzbestimmung'.format(portal_url)
+            return url
 
     def send_inquiry(self, data):
         context = aq_inner(self.context)

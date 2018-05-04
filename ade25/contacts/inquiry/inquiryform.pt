@@ -19,6 +19,11 @@
 
         <div class="app-page-content">
 
+            <div class="app-alert app-alert--danger" tal:condition="view/errors">
+                <div class="app-alert__title" i18n:translate="">Form submission failed</div>
+                <p i18n:translate="">There have been errors submitting your form</p>
+            </div>
+
           <form class="app-form app-form-inquiry"
                 method="post" role="form"
                 tal:define="errors view/errors"
@@ -29,11 +34,11 @@
             </p>
 
             <div class="app-form-fieldset">
-              <div class="app-form-group app-field-email"
+              <div class="form__group app-form-group app-field-email"
                   tal:define="error errors/email | nothing;
                               err_msg python:error and error['active'] == True;
                               value request/email | nothing"
-                  tal:attributes="class python:err_msg and 'app-form-group app-field-email app-field-required has-error' or 'app-form-group app-field-email app-field-required'">
+                  tal:attributes="class python:err_msg and 'form__group app-form-group app-field-email app-field-required has-error' or 'form__group app-form-group app-field-email app-field-required'">
 
                   <label class="xsr-only"
                     for="email"
@@ -52,17 +57,16 @@
 
                   <div class="help-block error"
                       tal:condition="err_msg">
-                    <i class="fa fa-exclamation-triangle"></i>
                     <span i18n:translate="">This field is required</span>
                   </div>
 
               </div><!-- /email field -->
 
-              <div class="app-form-group app-field-subject"
+              <div class="form__group app-form-group app-field-subject"
                 tal:define="error errors/subject | nothing;
                             err_msg python:error and error['active'] == True;
                             value request/subject | nothing"
-                tal:attributes="class python:err_msg and 'app-form-group app-field-subject app-field-required has-error' or 'app-form-group app-field-subject app-field-required'">
+                tal:attributes="class python:err_msg and 'form__group app-form-group app-field-subject app-field-required has-error' or 'form__group app-form-group app-field-subject app-field-required'">
 
                 <label for="subject"
                   i18n:translate="">Subject</label>
@@ -79,17 +83,16 @@
 
                 <div class="help-block error"
                     tal:condition="err_msg">
-                  <i class="fa fa-exclamation-triangle"></i>
                   <span i18n:translate="">This field is required</span>
                 </div>
 
               </div><!-- /subject field -->
 
-              <div class="app-form-group app-field-comment"
+              <div class="form__group app-form-group app-field-comment"
                   tal:define="error errors/comment | nothing;
                               err_msg python:error and error['active'] == True;
                               value request/comment | nothing"
-                  tal:attributes="class python:err_msg and 'app-form-group app-field-comment has-error' or 'app-form-group app-field-comment'">
+                  tal:attributes="class python:err_msg and 'form__group app-form-group app-field-comment has-error' or 'form__group app-form-group app-field-comment'">
 
                   <label for="comment"
                     i18n:translate="">Your message</label>
@@ -101,15 +104,63 @@
 
                   <div class="help-block error"
                       tal:condition="err_msg">
-                    <i class="fa fa-exclamation-triangle"></i>
-                    <span tal:replace="python:error['msg']" />
+                      <span i18n:translate="">This field is required</span>
                   </div>
 
               </div><!-- /message field -->
+
+              <tal:privacy tal:condition="view/privacy_policy_enabled">
+                  <div class="form__group app-form-group app-field-privacy-policy"
+                           tal:define="error errors/privacy-policy | nothing;
+                                       err_msg python:error and error['active'] == True;
+                                       value request/privacy-policy | nothing"
+                           tal:attributes="class python:err_msg and 'form__group form__group--checkboxes app-form-group app-field-privacy-policy app-field-required has-error' or 'form__group  form__group--checkboxes app-form-group app-field-privacy-policy app-field-required'">
+
+                          <input type="checkbox" class="form__control form__control--checkbox" id="privacy-policy" name="privacy-policy">
+                          <label class="form__label" for="privacy-policy" i18n:translate="">
+                              By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry.
+                          </label>
+
+                      <div class="required-icon">
+                          <div class="text">*</div>
+                      </div>
+
+                      <div class="help-block error"
+                               tal:condition="err_msg">
+                          <span i18n:translate="">This field is required</span>
+                      </div>
+
+                  </div><!-- /privacy notice field -->
+
+                  <div class="form__group app-form-group app-field-privacy-agreement"
+                           tal:define="error errors/privacy-policy-agreement | nothing;
+                                       err_msg python:error and error['active'] == True;
+                                       value request/privacy-policy-agreement | nothing"
+                           tal:attributes="class python:err_msg and 'form__group form__group--checkboxes  app-form-group app-field-privacy-agreement app-field-required has-error' or 'form__group form__group--checkboxes app-form-group app-field-privacy-agreement app-field-required'">
+
+                      <input type="checkbox" class="form__control form__control--checkbox" id="privacy-policy-agreement" name="privacy-policy-agreement">
+                      <label class="form__label" for="privacy-policy-agreement">
+                          <span i18n:translate="" tal:omit-tag="">I have acknowledged the</span>
+                          <a href="${view/privacy_policy_url}" i18n:translate="">privacy policy</a>
+                          <span i18n:translate="" tal:omit-tag="">and accept it.</span>
+                      </label>
+                      <div class="required-icon">
+                          <div class="text">*</div>
+                      </div>
+
+                      <div class="help-block error"
+                               tal:condition="err_msg">
+                          <span i18n:translate="">This field is required</span>
+                      </div>
+
+                  </div><!-- /privacy policy agreement field -->
+
+              </tal:privacy>
+
             </div>
 
             <!-- Form actions -->
-            <div class="app-form-group app-form-actions">
+            <div class="form__actions app-form-group app-form-actions">
                 <span tal:replace="structure context/@@authenticator/authenticator"/>
                 <button class="btn btn-primary btn-lg"
                     name="form.button.Submit"

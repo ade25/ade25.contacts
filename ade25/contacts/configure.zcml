@@ -28,6 +28,17 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <!-- Uninstall -->
+    <genericsetup:registerProfile
+            name="uninstall"
+            title="Uninstall ade25 contact management (ade25.base)"
+            directory="profiles/uninstall"
+            description="Uninstall Ade25 contact tools"
+            provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+    <include file="upgrades.zcml" />
+
     <plone:static
         directory="resources"
         type="theme"
