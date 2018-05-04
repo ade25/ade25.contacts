@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2018-05-03 15:47+0000\n"
-"PO-Revision-Date: 2018-05-03 17:56+0200\n"
+"POT-Creation-Date: 2018-05-04 09:20+0000\n"
+"PO-Revision-Date: 2018-05-04 11:21+0200\n"
 "Last-Translator: Serge Davidov <sd@kreativkombinat.de>\n"
 "Language-Team: KK Language Team <info@kreativkombinat.de>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Fügt Bildupload zu Kontakmodul hinzu"
 msgid "Ade25 Contacts Settings"
 msgstr "Ade25 Contacts Einstellungen"
 
-#: ../inquiry/inquiryform.pt:27
+#: ../inquiry/inquiryform.pt:32
 msgid "All fields marked with <code>*</code> are required."
 msgstr "Alle Felder markiert mit <code>*</code> sind Pflichtfelder."
 
@@ -48,7 +48,7 @@ msgstr "Alle Felder markiert mit <code>*</code> sind Pflichtfelder."
 msgid "Assign contact cards via selection"
 msgstr "Kontaktmodulzuweisung via Auswahl"
 
-#: ../inquiry/inquiryform.pt:118
+#: ../inquiry/inquiryform.pt:120
 msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
 msgstr "Mit Versenden der Nachricht bestätige ich die Richtigkeit meiner angegebenen Daten und willige einer Erhebung und weitergehenden Verarbeitung ein. Diese Daten werden nur zu dem von Ihnen angegebenen Anlass genutzt."
 
@@ -84,7 +84,7 @@ msgstr "Kontaktfoto"
 msgid "Department"
 msgstr "Abteilung"
 
-#: ../behaviors/contact.py:44 ../inquiry/inquiryform.pt:38
+#: ../behaviors/contact.py:44 ../inquiry/inquiryform.pt:43
 msgid "E-Mail"
 msgstr "Ihre E-Mail-Adresse"
 
@@ -104,7 +104,11 @@ msgstr "Fax"
 msgid "First name"
 msgstr "Name"
 
-#: ../inquiry/inquiryform.pt:142
+#: ../inquiry/inquiryform.pt:23
+msgid "Form submission failed"
+msgstr "Formular konnte nicht versendet werden"
+
+#: ../inquiry/inquiryform.pt:143
 msgid "I have acknowledged the"
 msgstr "Ich habe die "
 
@@ -112,7 +116,7 @@ msgstr "Ich habe die "
 msgid "Inquiry form"
 msgstr "Anfrageformular"
 
-#: ../inquiry/inquiry.py:113
+#: ../inquiry/inquiry.py:128
 msgid "Inquiry from website visitor"
 msgstr "Nachricht über das Web Anfrage Formular"
 
@@ -152,7 +156,7 @@ msgstr "Setzen Sie einen Haken, wenn eine Checkbox zur Datenverarbeitung und zur
 msgid "Send message"
 msgstr "Nachricht senden"
 
-#: ../inquiry/inquiryform.pt:67
+#: ../inquiry/inquiryform.pt:71
 msgid "Subject"
 msgstr "Betreff"
 
@@ -164,7 +168,11 @@ msgstr "Abschicken"
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
 msgstr "Vielen Dank für Ihr Interesse. Wir werden uns sobald wie möglich mit Ihrem Anliegen auseinandersetzen."
 
-#: ../inquiry/inquiry.py:47 ../inquiry/inquiryform.pt:56
+#: ../inquiry/inquiryform.pt:24
+msgid "There have been errors submitting your form"
+msgstr "Bitte korrigieren Sie die angezeigten Fehler"
+
+#: ../inquiry/inquiry.py:91 ../inquiry/inquiryform.pt:60
 msgid "This field is required"
 msgstr "Dies ist ein Pflichtfeld"
 
@@ -188,7 +196,7 @@ msgstr "Anzeige im Inhaltsbereich aktivieren"
 msgid "Your inquiry has been sent successfully."
 msgstr "Ihre Anfrage wurde erfolgreich verschickt."
 
-#: ../inquiry/inquiryform.pt:94
+#: ../inquiry/inquiryform.pt:97
 msgid "Your message"
 msgstr "Ihre Nachricht an uns"
 
@@ -196,7 +204,7 @@ msgstr "Ihre Nachricht an uns"
 msgid "Zipcode"
 msgstr "Postleitzahl"
 
-#: ../inquiry/inquiryform.pt:144
+#: ../inquiry/inquiryform.pt:145
 msgid "and accept it."
 msgstr "zur Kenntnis genommen und akzeptiere diese."
 
@@ -205,6 +213,6 @@ msgstr "zur Kenntnis genommen und akzeptiere diese."
 msgid "label_up_to_plone_setup"
 msgstr "Zur Seitenkonfiguration"
 
-#: ../inquiry/inquiryform.pt:143
+#: ../inquiry/inquiryform.pt:144
 msgid "privacy policy"
 msgstr "Datenschutzbestimmungen"

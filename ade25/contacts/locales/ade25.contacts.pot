@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-05-03 15:47+0000\n"
+"POT-Creation-Date: 2018-05-04 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Ade25 Contacts Settings"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:27
+#: ./../inquiry/inquiryform.pt:32
 msgid "All fields marked with <code>*</code> are required."
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Assign contact cards via selection"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:118
+#: ./../inquiry/inquiryform.pt:120
 msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
 msgstr ""
 
@@ -86,7 +86,7 @@ msgid "Department"
 msgstr ""
 
 #: ./../behaviors/contact.py:44
-#: ./../inquiry/inquiryform.pt:38
+#: ./../inquiry/inquiryform.pt:43
 msgid "E-Mail"
 msgstr ""
 
@@ -106,7 +106,11 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:142
+#: ./../inquiry/inquiryform.pt:23
+msgid "Form submission failed"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:143
 msgid "I have acknowledged the"
 msgstr ""
 
@@ -115,7 +119,7 @@ msgstr ""
 msgid "Inquiry form"
 msgstr ""
 
-#: ./../inquiry/inquiry.py:113
+#: ./../inquiry/inquiry.py:128
 msgid "Inquiry from website visitor"
 msgstr ""
 
@@ -156,7 +160,7 @@ msgstr ""
 msgid "Send message"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:67
+#: ./../inquiry/inquiryform.pt:71
 msgid "Subject"
 msgstr ""
 
@@ -168,8 +172,12 @@ msgstr ""
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
 msgstr ""
 
-#: ./../inquiry/inquiry.py:47
-#: ./../inquiry/inquiryform.pt:56
+#: ./../inquiry/inquiryform.pt:24
+msgid "There have been errors submitting your form"
+msgstr ""
+
+#: ./../inquiry/inquiry.py:91
+#: ./../inquiry/inquiryform.pt:60
 msgid "This field is required"
 msgstr ""
 
@@ -193,7 +201,7 @@ msgstr ""
 msgid "Your inquiry has been sent successfully."
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:94
+#: ./../inquiry/inquiryform.pt:97
 msgid "Your message"
 msgstr ""
 
@@ -201,7 +209,7 @@ msgstr ""
 msgid "Zipcode"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:144
+#: ./../inquiry/inquiryform.pt:145
 msgid "and accept it."
 msgstr ""
 
@@ -210,6 +218,6 @@ msgstr ""
 msgid "label_up_to_plone_setup"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:143
+#: ./../inquiry/inquiryform.pt:144
 msgid "privacy policy"
 msgstr ""
