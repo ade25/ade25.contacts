@@ -7,6 +7,7 @@ from Acquisition import aq_inner
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser import BrowserView
 from plone import api
+from plone.api.exc import InvalidParameterError
 from zope.component import getMultiAdapter
 
 from ade25.contacts.inquiry.mailer import create_plaintext_message
@@ -99,9 +100,12 @@ class InquiryFormView(BrowserView):
 
     @staticmethod
     def privacy_policy_enabled():
-        enabled = api.portal.get_registry_record(
-            name='ade25.contacts.display_privacy_policy'
-        )
+        try:
+            enabled = api.portal.get_registry_record(
+                name='ade25.contacts.display_privacy_policy'
+            )
+        except InvalidParameterError:
+            enabled = False
         if enabled:
             return enabled
         return False
