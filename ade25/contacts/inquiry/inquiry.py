@@ -29,7 +29,7 @@ class InquiryFormView(BrowserView):
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ('email', 'subject')
         if self.privacy_policy_enabled():
-            required = required + ('privacy', 'privacy')
+            required = required + ('privacy-policy-agreement', 'privacy-policy')
         if 'form.button.Submit' in self.request:
             authenticator = getMultiAdapter((self.context, self.request),
                                             name=u"authenticator")
@@ -94,14 +94,15 @@ class InquiryFormView(BrowserView):
 
     @staticmethod
     def privacy_policy_url():
-        url = api.portal.get_registry_record(
+        portal = api.portal.get()
+        portal_url = portal.absolute_url()
+        policy_url = api.portal.get_registry_record(
             name='ade25.contacts.privacy_policy_url'
         )
-        if url:
+        if policy_url:
+            url = '{0}{1}'.format(portal_url, policy_url)
             return url
         else:
-            portal = api.portal.get()
-            portal_url = portal.absolute_url()
             url = '{0}/datenschutzbestimmung'.format(portal_url)
             return url
 
