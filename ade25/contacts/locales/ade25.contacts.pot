@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-13 10:16+0000\n"
+"POT-Creation-Date: 2018-05-04 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,12 +37,20 @@ msgstr ""
 msgid "Adds image to contact cards"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:27
+#: ./../browser/settings.pt:19
+msgid "Ade25 Contacts Settings"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:32
 msgid "All fields marked with <code>*</code> are required."
 msgstr ""
 
 #: ./../behaviors/configure.zcml:35
 msgid "Assign contact cards via selection"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:120
+msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
 msgstr ""
 
 #: ./../behaviors/contact.py:84
@@ -78,8 +86,16 @@ msgid "Department"
 msgstr ""
 
 #: ./../behaviors/contact.py:44
-#: ./../inquiry/inquiryform.pt:38
+#: ./../inquiry/inquiryform.pt:43
 msgid "E-Mail"
+msgstr ""
+
+#: ./../browser/controlpanel.py:16
+msgid "Enable Privacy Policy fields"
+msgstr ""
+
+#: ./../browser/controlpanel.py:25
+msgid "Enter relative location of privacy and data protection notice page"
 msgstr ""
 
 #: ./../behaviors/contact.py:34
@@ -90,12 +106,20 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
+#: ./../inquiry/inquiryform.pt:23
+msgid "Form submission failed"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:143
+msgid "I have acknowledged the"
+msgstr ""
+
 #: ./../inquiry/inquiryform.pt:14
 #: ./../inquiry/inquiryformdispatched.pt:14
 msgid "Inquiry form"
 msgstr ""
 
-#: ./../inquiry/inquiry.py:89
+#: ./../inquiry/inquiry.py:128
 msgid "Inquiry from website visitor"
 msgstr ""
 
@@ -115,6 +139,10 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
+#: ./../browser/controlpanel.py:24
+msgid "Privacy Policy Location"
+msgstr ""
+
 #: ./../behaviors/contactassignment.py:34
 msgid "Related"
 msgstr ""
@@ -123,16 +151,20 @@ msgstr ""
 msgid "Return to last visited page"
 msgstr ""
 
+#: ./../browser/controlpanel.py:17
+msgid "Select if a privacy notice and policy agreement checkbox should be added to inquiry forms."
+msgstr ""
+
 #: ./../browser/contactcard.pt:39
 #: ./../browser/contactelement.pt:37
 msgid "Send message"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:67
+#: ./../inquiry/inquiryform.pt:71
 msgid "Subject"
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:114
+#: ./../inquiry/inquiryform.pt:165
 msgid "Submit"
 msgstr ""
 
@@ -140,8 +172,12 @@ msgstr ""
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
 msgstr ""
 
-#: ./../inquiry/inquiry.py:45
-#: ./../inquiry/inquiryform.pt:56
+#: ./../inquiry/inquiryform.pt:24
+msgid "There have been errors submitting your form"
+msgstr ""
+
+#: ./../inquiry/inquiry.py:91
+#: ./../inquiry/inquiryform.pt:60
 msgid "This field is required"
 msgstr ""
 
@@ -165,10 +201,23 @@ msgstr ""
 msgid "Your inquiry has been sent successfully."
 msgstr ""
 
-#: ./../inquiry/inquiryform.pt:94
+#: ./../inquiry/inquiryform.pt:97
 msgid "Your message"
 msgstr ""
 
 #: ./../behaviors/contact.py:66
 msgid "Zipcode"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:145
+msgid "and accept it."
+msgstr ""
+
+#. Default: "Up to Site Setup"
+#: ./../browser/settings.pt:25
+msgid "label_up_to_plone_setup"
+msgstr ""
+
+#: ./../inquiry/inquiryform.pt:144
+msgid "privacy policy"
 msgstr ""

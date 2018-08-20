@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry>
+
+    <records interface="ade25.contacts.browser.controlpanel.IAde25ContactsControlPanel"
+             prefix="ade25.contacts" />
+
+</registry>
