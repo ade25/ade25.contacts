@@ -36,22 +36,38 @@ class ContactViewlet(base.ViewletBase):
         context = aq_inner(self.context)
         return context.relatedContacts
 
+    @staticmethod
+    def _contact_object_is_published(obj):
+        contact_state = api.content.get_state(obj)
+        if contact_state == 'published':
+            return True
+        return False
+
+    def available_contact_assigments(self):
+        assignments = self.contact_assignments()
+        if api.user.is_anonymous():
+            # Prevent errors caused by private target objects
+            public_contacts = list()
+            for contact in assignments:
+                if not contact.isBroken():
+                    obj = contact.to_object
+                    if self._contact_object_is_published(obj):
+                        public_contacts.append(obj)
+            return public_contacts
+        return assignments
+
     def contact_cards(self):
         cards = list()
-        for contact in self.contact_assignments():
-            obj = contact.to_object
-            if obj and not obj.display_element:
-                cards.append(obj)
+        for contact in self.available_contact_assigments():
+            if not contact.display_element:
+                cards.append(contact)
         return cards
 
     def contact_elements(self):
         elements = list()
-        for contact in self.contact_assignments():
-            if contact.isBroken():
-                continue
-            obj = contact.to_object
-            if obj and obj.display_element:
-                elements.append(obj)
+        for contact in self.available_contact_assigments():
+            if contact.display_element:
+                elements.append(contact)
         return elements
 
     def rendered_contact_card(self, uuid):
@@ -65,9 +81,12 @@ class ContactViewlet(base.ViewletBase):
     def rendered_contact_element(self, uuid):
         context = aq_inner(self.context)
         obj = api.content.get(UID=uuid)
-        template = obj.restrictedTraverse('@@contact-element-view')(
-            uuid=context.UID()
-        )
+        try:
+            template = obj.restrictedTraverse('@@contact-element-view')(
+                uuid=context.UID()
+            )
+        except AttributeError:
+            return
         return template
 
     def render(self):
