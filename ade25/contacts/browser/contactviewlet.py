@@ -45,16 +45,17 @@ class ContactViewlet(base.ViewletBase):
 
     def available_contact_assigments(self):
         assignments = self.contact_assignments()
-        if api.user.is_anonymous():
-            # Prevent errors caused by private target objects
-            public_contacts = list()
-            for contact in assignments:
-                if not contact.isBroken():
-                    obj = contact.to_object
+        public_contacts = list()
+        for contact in assignments:
+            if not contact.isBroken():
+                obj = contact.to_object
+                if api.user.is_anonymous():
+                    # Prevent errors caused by private target objects
                     if self._contact_object_is_published(obj):
                         public_contacts.append(obj)
-            return public_contacts
-        return assignments
+                else:
+                    public_contacts.append(obj)
+        return public_contacts
 
     def contact_cards(self):
         cards = list()
