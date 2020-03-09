@@ -2,18 +2,19 @@
 """ Module providing utility functions for composing and sending
     html and plaintext messages
 """
-import cStringIO
+
+from io import StringIO
 import formatter
 import logging
 import lxml
 import os
 import socket
 
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEText import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from email.utils import formataddr
 from email.utils import parseaddr
-from htmllib import HTMLParser
+from html.parser import HTMLParser
 from lxml.html.clean import Cleaner
 from smtplib import SMTPException
 from string import Template
@@ -25,7 +26,7 @@ from Products.MailHost.MailHost import MailHostError
 from Products.CMFPlone.utils import getSiteEncoding
 from Products.CMFPlone.utils import safe_unicode
 
-logger = logging.getLogger('eda.sitecontent')
+logger = logging.getLogger('ade25.base')
 
 DEFAULT_CHARSET = 'utf-8'
 
@@ -159,37 +160,37 @@ def prepare_email_message(message, plaintext):
 
 
 def create_plaintext_message(message):
-        """ Create clean plain text version of email message
+    """ Create clean plain text version of email message
 
-            Parse the html and remove style and javacript tags and then
-            create a plain-text-message by parsing the html
-            and attaching links as endnotes
-        """
-        cleaner = Cleaner()
-        cleaner.javascript = True
-        cleaner.style = True
-        cleaner.kill_tags = ['style']
-        doc = message.decode('utf-8', 'ignore')
-        to_clean = lxml.html.fromstring(doc)
-        cleaned_msg = lxml.html.tostring(cleaner.clean_html(to_clean))
-        plain_text_maxcols = 72
-        textout = cStringIO.StringIO()
-        formtext = formatter.AbstractFormatter(formatter.DumbWriter(
-                                               textout, plain_text_maxcols))
-        parser = HTMLParser(formtext)
-        parser.feed(cleaned_msg)
-        parser.close()
-        # append the anchorlist at the bottom of a message
-        # to keep the message readable.
-        counter = 0
-        anchorlist = "\n\n" + ("-" * plain_text_maxcols) + "\n\n"
-        for item in parser.anchorlist:
-            counter += 1
-            if item.startswith('https://'):
-                new_item = item.replace('https://', 'http://')
-            else:
-                new_item = item
-            anchorlist += "[%d] %s\n" % (counter, new_item)
-        text = textout.getvalue() + anchorlist
-        del textout, formtext, parser, anchorlist
-        return text
+        Parse the html and remove style and javacript tags and then
+        create a plain-text-message by parsing the html
+        and attaching links as endnotes
+    """
+    cleaner = Cleaner()
+    cleaner.javascript = True
+    cleaner.style = True
+    cleaner.kill_tags = ['style']
+    doc = message.decode('utf-8', 'ignore')
+    to_clean = lxml.html.fromstring(doc)
+    cleaned_msg = lxml.html.tostring(cleaner.clean_html(to_clean))
+    plain_text_maxcols = 72
+    textout = StringIO()
+    formtext = formatter.AbstractFormatter(formatter.DumbWriter(
+        textout, plain_text_maxcols))
+    parser = HTMLParser(formtext)
+    parser.feed(cleaned_msg)
+    parser.close()
+    # append the anchorlist at the bottom of a message
+    # to keep the message readable.
+    counter = 0
+    anchorlist = "\n\n" + ("-" * plain_text_maxcols) + "\n\n"
+    for item in parser.anchorlist:
+        counter += 1
+        if item.startswith('https://'):
+            new_item = item.replace('https://', 'http://')
+        else:
+            new_item = item
+        anchorlist += "[%d] %s\n" % (counter, new_item)
+    text = textout.getvalue() + anchorlist
+    del textout, formtext, parser, anchorlist
+    return text
